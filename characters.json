@@ -1,43 +1,53 @@
 {
-  "app": { "name": "Yapp", "server": "nugget's hideout", "channel": "general" },
+  "app": {
+    "name": "Yapp",
+    "server": "gamer cave",
+    "channel": "general"
+  },
   "characters": {
-    "nugget": {
-      "name": "Nugget",
-      "color": "#ffb02e",
-      "avatar": "nugget",
+    "ichika": {
+      "name": "Ichika",
+      "color": "#ff8fc7",
+      "avatar": "ichika",
       "role": "MAIN",
-      "bio": "A chicken nugget in sunglasses. The main guy. Thinks he is the coolest person alive. He is not. Owns the server, but nobody respects that."
-    },
-    "grandma": {
-      "name": "Grandma",
-      "color": "#d68cff",
-      "avatar": "grandma",
-      "bio": "Nugget's grandma. Just learned the internet. TYPES IN CAPS. Presses every button. Accidentally the most powerful person in the server. Loves bingo."
+      "bio": "22, college student, anime-style gamer girl. The only girl in the server. Cute on the outside, savage on the inside. The guys bother her every episode; she wins every episode. Look: long pink hair, cat-ear headphones, aqua eyes, white blouse with pink ribbon (assets/ichika_source.mp4)."
     },
     "kevin": {
       "name": "xX_Kevin_Xx",
-      "color": "#5ee05a",
+      "color": "#57f287",
       "avatar": "kevin",
-      "bio": "Self-proclaimed 'pro gamer' and 'basically famous'. Lies about everything. Gets banned in almost every episode. His mom is scarier than any boss fight."
+      "bio": "Try-hard simp. Lies about being famous, rich, and 'basically a pro'. Changes his name to impress Ichika. Gets banned a lot. His mom is the final boss."
+    },
+    "gerald": {
+      "name": "Sir Gerald",
+      "color": "#c9a26b",
+      "avatar": "gerald",
+      "bio": "Fedora. 'M'lady.' Says 'I respect women' and then immediately doesn't. Writes poems nobody asked for. Tips his hat in text: *tips fedora*."
     },
     "bot": {
       "name": "ServerBot 3000",
       "color": "#5ab8ff",
       "avatar": "bot",
-      "tag": "BOT",
-      "bio": "The server's moderation bot. Slightly too self-aware. Fact-checks everyone. Dramatic. Wants to be loved."
+      "tag": "APP",
+      "bio": "The server's moderation bot. Fact-checks the guys. Secretly on Ichika's side. 'creep detected.'"
     },
     "dave": {
       "name": "Dave",
-      "color": "#b8b8c8",
+      "color": "#b5bac1",
       "avatar": "dave",
-      "bio": "A pigeon. Never reads the chat. Shows up at the end of EVERY episode, days late, with a reply that makes no sense. The running gag."
+      "bio": "A pigeon. Never reads the chat. Shows up '3 DAYS LATER' at the end of EVERY episode with a reply that makes no sense."
+    },
+    "grandma": {
+      "name": "Grandma",
+      "color": "#c27cff",
+      "avatar": "grandma",
+      "bio": "Ichika's grandma. TYPES IN CAPS. Accidentally an admin. Destroys the guys without trying."
     },
     "mom": {
       "name": "Kevin's Mom",
-      "color": "#ff5c5c",
+      "color": "#ed4245",
       "avatar": "mom",
-      "bio": "Guest. Appears when Kevin lies too hard. Final boss."
+      "bio": "Guest. Appears when Kevin goes too far. 'KEVIN.'"
     }
   }
 }

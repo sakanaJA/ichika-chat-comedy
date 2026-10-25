@@ -4,88 +4,129 @@
 <meta charset="utf-8">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0e0f16; }
-  body { font-family: "Inter", "Noto Color Emoji", sans-serif; color: #eceef7; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #1e1f22; }
+  body { font-family: "Inter", "Noto Color Emoji", sans-serif; color: #dbdee1; }
 
-  #stage { position: absolute; inset: 0; transform-origin: 0 0; }
-  #hook { position: absolute; left: 0; top: 0; width: 1080px; height: 340px;
-    display: flex; align-items: center; justify-content: center; padding: 60px 60px 20px; }
-  #hook .card { background: #fff; color: #0e0f16; font-weight: 900; font-size: 60px; line-height: 1.08;
-    text-align: center; padding: 24px 34px; border-radius: 26px; border: 6px solid #0e0f16;
-    box-shadow: 10px 10px 0 #ff3d6e; }
+  #stage { position: absolute; inset: 0; transform-origin: 0 0; background: #1e1f22; }
+  #hook { position: absolute; left: 0; top: 0; width: 1080px; height: 300px; display: flex; align-items: center;
+    justify-content: center; padding: 50px 50px 10px; background: #1e1f22; }
+  #hook .card { background: #fff; color: #111214; font-weight: 900; font-size: 58px; line-height: 1.08; text-align: center;
+    padding: 22px 32px; border-radius: 24px; border: 6px solid #111214; box-shadow: 10px 10px 0 #ff8fc7; }
 
-  #window { position: absolute; left: 24px; top: 360px; width: 1032px; height: 1200px;
-    background: #1b1d29; border-radius: 34px; overflow: hidden; display: flex; flex-direction: column;
-    border: 4px solid #2b2e42; }
-  #topbar { height: 104px; flex: none; display: flex; align-items: center; padding: 0 34px; gap: 16px;
-    background: #171924; border-bottom: 4px solid #2b2e42; }
-  #topbar .hash { font-size: 54px; color: #767b9c; font-weight: 800; }
-  #topbar .chan { font-size: 42px; font-weight: 800; }
-  #topbar .srv { margin-left: auto; font-size: 30px; color: #9aa0c3; font-weight: 700;
-    background: #25283a; padding: 10px 22px; border-radius: 40px; }
+  #app { position: absolute; left: 0; top: 300px; width: 1080px; height: 1330px; display: flex; }
+  #rail { width: 118px; flex: none; background: #1e1f22; display: flex; flex-direction: column; align-items: center; gap: 16px; padding-top: 18px; position: relative; }
+  .srv-ico { width: 82px; height: 82px; border-radius: 50%; background: #313338; display: flex; align-items: center; justify-content: center;
+    font-size: 40px; position: relative; }
+  .srv-ico.home { background: #5865f2; border-radius: 26px; }
+  .srv-ico.on { border-radius: 26px; background: #ff8fc7; }
+  .srv-ico.on::before { content: ""; position: absolute; left: -20px; width: 8px; height: 60px; background: #f2f3f5; border-radius: 0 6px 6px 0; }
+  .srv-ico.add { color: #23a55a; font-size: 50px; font-weight: 300; }
+  .srv-ico .badge { position: absolute; right: -6px; bottom: -6px; background: #f23f43; color: #fff; font-size: 22px; font-weight: 800;
+    border: 6px solid #1e1f22; border-radius: 20px; padding: 0 8px; min-width: 40px; text-align: center; }
+  .sep { width: 48px; height: 4px; background: #35363c; border-radius: 2px; }
 
-  #feed { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 0 14px; }
-  .group { display: flex; gap: 22px; padding: 16px 32px 6px; }
-  .group.mention { background: rgba(255, 196, 0, .09); box-shadow: inset 8px 0 0 #ffc400; }
-  .av { width: 108px; height: 108px; flex: none; }
-  .av svg { width: 108px; height: 108px; display: block; }
+  #main { flex: 1; background: #313338; display: flex; flex-direction: column; border-top-left-radius: 22px; overflow: hidden; }
+  #topbar { height: 96px; flex: none; display: flex; align-items: center; padding: 0 28px; gap: 14px; border-bottom: 3px solid #26272b;
+    box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+  #topbar .hash { font-size: 52px; color: #80848e; font-weight: 500; }
+  #topbar .chan { font-size: 38px; font-weight: 700; color: #f2f3f5; }
+  #topbar .div { width: 3px; height: 36px; background: #3f4147; margin: 0 6px; }
+  #topbar .topic { font-size: 28px; color: #b5bac1; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+  #topbar .ic { display: flex; gap: 22px; }
+  #topbar .ic svg { width: 40px; height: 40px; }
+
+  #feed { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 0 18px; }
+  .group { display: flex; gap: 22px; padding: 14px 26px 4px 22px; position: relative; flex-wrap: wrap; }
+  .group.mention { background: rgba(240,178,50,.10); }
+  .group.mention::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #f0b232; }
+  .reply { width: 100%; display: flex; align-items: center; gap: 10px; padding-left: 52px; margin-bottom: -6px; font-size: 27px; color: #b5bac1; position: relative; height: 40px; }
+  .reply::before { content: ""; position: absolute; left: 50px; top: 20px; width: 52px; height: 22px; border-left: 4px solid #4e5058; border-top: 4px solid #4e5058; border-top-left-radius: 12px; }
+  .reply .mini { width: 34px; height: 34px; margin-left: 66px; flex: none; }
+  .reply .mini svg { width: 34px; height: 34px; display: block; }
+  .reply b { font-weight: 700; }
+  .reply span.t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 560px; }
+  .av { width: 104px; height: 104px; flex: none; }
+  .av svg { width: 104px; height: 104px; display: block; }
   .body { flex: 1; min-width: 0; }
   .head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 2px; }
-  .name { font-size: 42px; font-weight: 800; }
-  .tag { font-size: 24px; font-weight: 900; background: #5865ff; color: #fff; padding: 3px 12px; border-radius: 9px;
-    position: relative; top: -5px; }
-  .tag.mod { background: #ffc400; color: #1b1300; }
-  .time { font-size: 26px; color: #6f7494; font-weight: 600; }
-  .msg { font-size: 48px; line-height: 1.25; font-weight: 500; padding: 3px 0; word-wrap: break-word; transform-origin: left center; }
-  .msg.big { font-size: 96px; font-weight: 900; line-height: 1.02; letter-spacing: -1px; }
-  .msg.deleted { color: #6f7494; font-style: italic; font-size: 38px; }
-  .msg .at { background: rgba(88, 101, 255, .3); color: #c9cdff; border-radius: 8px; padding: 0 6px; font-weight: 700; }
-  .img { margin: 8px 0; width: 640px; border-radius: 22px; overflow: hidden; border: 4px solid #2b2e42; background: #f4f1ea;
-    transform-origin: left top; }
-  .img .pic { height: 360px; display: flex; align-items: center; justify-content: center; font-size: 210px; position: relative; }
-  .img .cap { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: 46px; font-weight: 900;
-    color: #fff; -webkit-text-stroke: 3px #000; paint-order: stroke fill; }
-  .reacts { display: flex; gap: 12px; margin: 6px 0 4px; }
-  .react { background: #2b2f48; border: 3px solid #5865ff; border-radius: 22px; padding: 4px 16px; font-size: 36px;
-    font-weight: 800; display: flex; gap: 10px; align-items: center; }
-  .sys { display: flex; align-items: center; gap: 18px; padding: 14px 32px 14px 60px; font-size: 38px; color: #a6abcc; font-weight: 700; }
-  .sys .ico { font-size: 42px; }
-  .sys.red { color: #ff5c5c; } .sys.gold { color: #ffc400; } .sys.green { color: #5ee05a; } .sys.blue { color: #5ab8ff; }
-  .sys.later { justify-content: center; padding-left: 32px; color: #fff; font-size: 44px; font-weight: 900; letter-spacing: 2px; }
+  .name { font-size: 40px; font-weight: 700; }
+  .tag { font-size: 22px; font-weight: 800; background: #5865f2; color: #fff; padding: 3px 10px; border-radius: 7px; position: relative; top: -5px; }
+  .tag.admin { background: #f0b232; color: #241900; }
+  .time { font-size: 25px; color: #949ba4; font-weight: 500; }
+  .msg { font-size: 46px; line-height: 1.27; font-weight: 400; padding: 2px 0; word-wrap: break-word; transform-origin: left center; color: #dbdee1; }
+  .msg.big { font-size: 94px; font-weight: 900; line-height: 1.02; letter-spacing: -1px; color: #fff; }
+  .msg.deleted { color: #80848e; font-style: italic; font-size: 36px; }
+  .msg .ed { font-size: 24px; color: #949ba4; }
+  .msg .at { background: rgba(88,101,242,.3); color: #c9cdfb; border-radius: 6px; padding: 0 6px; font-weight: 500; }
+  .img { margin: 8px 0; width: 620px; border-radius: 14px; overflow: hidden; transform-origin: left top; }
+  .img .pic { height: 350px; display: flex; align-items: center; justify-content: center; font-size: 200px; position: relative; }
+  .img .cap { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 44px; font-weight: 900; color: #fff;
+    -webkit-text-stroke: 3px #000; paint-order: stroke fill; }
+  .reacts { display: flex; gap: 10px; margin: 6px 0 4px; }
+  .react { background: rgba(88,101,242,.15); border: 3px solid #5865f2; border-radius: 14px; padding: 3px 14px; font-size: 34px; font-weight: 700;
+    display: flex; gap: 10px; align-items: center; color: #dee0fc; }
+  .sys { display: flex; align-items: center; gap: 20px; padding: 14px 26px 14px 52px; font-size: 36px; color: #949ba4; font-weight: 500; }
+  .sys .ico { font-size: 38px; width: 50px; text-align: center; }
+  .sys.green .ico { color: #23a55a; } .sys.red { color: #f23f43; font-weight: 600; } .sys.gold { color: #f0b232; font-weight: 600; }
+  .sys.blue { color: #00a8fc; font-weight: 600; }
+  .sys.later { justify-content: center; padding-left: 26px; color: #fff; font-size: 42px; font-weight: 900; letter-spacing: 2px; }
+  .sys.later::before, .sys.later::after { content: ""; flex: 1; height: 3px; background: #3f4147; }
 
-  #typing { height: 66px; flex: none; padding: 0 38px; font-size: 32px; color: #a6abcc; display: flex; align-items: center; gap: 14px; font-weight: 600; }
-  #typing .dots { display: flex; gap: 8px; }
-  #typing .dots span { width: 14px; height: 14px; border-radius: 50%; background: #a6abcc; opacity: .3; }
+  #input { height: 108px; flex: none; margin: 0 22px 8px; background: #383a40; border-radius: 18px; display: flex; align-items: center; padding: 0 26px; gap: 22px;
+    font-size: 36px; color: #6d6f78; font-weight: 400; }
+  #input .plus { width: 50px; height: 50px; border-radius: 50%; background: #b5bac1; color: #383a40; display: flex; align-items: center; justify-content: center; font-size: 46px; font-weight: 700; line-height: 1; }
+  #input .ph { flex: 1; }
+  #input .gif { border: 3px solid #b5bac1; color: #b5bac1; font-size: 20px; font-weight: 900; border-radius: 6px; padding: 2px 6px; }
+  #input .emo { font-size: 42px; filter: grayscale(1) brightness(1.4); opacity: .8; }
+  #typing { height: 54px; flex: none; padding: 0 30px; font-size: 28px; color: #dbdee1; display: flex; align-items: center; gap: 12px; font-weight: 500; }
+  #typing .dots { display: flex; gap: 6px; }
+  #typing .dots span { width: 12px; height: 12px; border-radius: 50%; background: #dbdee1; opacity: .3; }
   #typing .dots span.on { opacity: 1; }
-  #input { height: 116px; flex: none; margin: 0 26px 26px; background: #25283a; border-radius: 26px; display: flex;
-    align-items: center; padding: 0 34px; font-size: 38px; color: #6f7494; font-weight: 500; }
 
   /* overlays */
   #fry { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; background: radial-gradient(circle, #ffb070 0%, #ff2a00 100%); opacity: 0; }
-  #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  #flash { position: absolute; inset: 0; opacity: 0; }
   #closeup { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 40px;
     background: radial-gradient(circle, #2a1a3a 0%, #000 75%); }
-  #closeup .big { width: 760px; height: 760px; }
+  #closeup .big { width: 860px; height: 860px; }
   #closeup .big svg { width: 100%; height: 100%; }
   #closeup .line { font-size: 84px; font-weight: 900; text-align: center; max-width: 960px; color: #fff; line-height: 1.05;
     -webkit-text-stroke: 5px #000; paint-order: stroke fill; }
-  #impact { position: absolute; left: 0; right: 0; top: 820px; text-align: center; font-size: 150px; font-weight: 900;
-    color: #fff; -webkit-text-stroke: 10px #000; paint-order: stroke fill; line-height: .95; display: none; padding: 0 30px; }
+  #impact { position: absolute; left: 0; right: 0; top: 820px; text-align: center; font-size: 150px; font-weight: 900; color: #fff;
+    -webkit-text-stroke: 10px #000; paint-order: stroke fill; line-height: .95; display: none; padding: 0 30px; }
   #burst { position: absolute; inset: 0; pointer-events: none; }
   #burst span { position: absolute; font-size: 130px; }
   #glitch { position: absolute; inset: 0; pointer-events: none; }
   #glitch div { position: absolute; left: 0; right: 0; mix-blend-mode: screen; }
-  #vignette { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 260px rgba(255,0,60,.0); }
+  #vignette { position: absolute; inset: 0; pointer-events: none; }
 </style>
+<script src="avatars.js"></script>
 </head>
 <body>
 <div id="stage">
   <div id="hook"><div class="card" id="hooktext"></div></div>
-  <div id="window">
-    <div id="topbar"><span class="hash">#</span><span class="chan">general</span><span class="srv" id="srv"></span></div>
-    <div id="feed"></div>
-    <div id="typing"></div>
-    <div id="input">Message #general</div>
+  <div id="app">
+    <div id="rail">
+      <div class="srv-ico home"><svg viewBox="0 0 40 40" width="46" height="46"><path d="M6 10 Q6 5 11 5 H29 Q34 5 34 10 V22 Q34 27 29 27 H17 L9 34 V27 Q6 26 6 22 Z" fill="#fff"/></svg></div>
+      <div class="sep"></div>
+      <div class="srv-ico on">🎮</div>
+      <div class="srv-ico">🍕<span class="badge">3</span></div>
+      <div class="srv-ico">📚</div>
+      <div class="srv-ico">🌙</div>
+      <div class="srv-ico">🐸<span class="badge">99+</span></div>
+      <div class="srv-ico add">+</div>
+    </div>
+    <div id="main">
+      <div id="topbar"><span class="hash">#</span><span class="chan">general</span><span class="div"></span><span class="topic" id="topic"></span>
+        <span class="ic">
+          <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zm-2 15a2 2 0 0 0 4 0" fill="#b5bac1"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M14 3l7 7-3 1-4 4 1 4-2 1-4-5-5 5-1-1 5-5-5-4 1-2 4 1 4-4z" fill="#b5bac1"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4" fill="#b5bac1"/><path d="M1 21c0-4 4-7 8-7s8 3 8 7z" fill="#b5bac1"/><circle cx="17" cy="7" r="3" fill="#b5bac1"/><path d="M15 13c4 0 8 2 8 6h-4c0-2-1-4-4-6z" fill="#b5bac1"/></svg>
+        </span></div>
+      <div id="feed"></div>
+      <div id="input"><span class="plus">+</span><span class="ph">Message #general</span><span class="gif">GIF</span><span class="emo">🙂</span></div>
+      <div id="typing"></div>
+    </div>
   </div>
 </div>
 <div id="fry"></div>
@@ -96,55 +137,6 @@
 <div id="vignette"></div>
 <div id="flash"></div>
 <script>
-const O = 'stroke="#111" stroke-width="4" stroke-linejoin="round"';
-const AV = {
-  nugget: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#ff8c1a" ${O}/>
-    <path d="M22 58 Q18 36 34 28 Q46 18 62 24 Q82 28 80 50 Q84 70 66 78 Q50 86 34 78 Q20 72 22 58Z" fill="#f5b445" ${O}/>
-    <circle cx="36" cy="44" r="2.5" fill="#c9852a"/><circle cx="62" cy="64" r="2.5" fill="#c9852a"/><circle cx="54" cy="34" r="2" fill="#c9852a"/>
-    <path d="M28 46 H72 L70 54 Q66 60 58 58 L54 50 H46 L42 58 Q34 60 30 54Z" fill="#111"/>
-    <path d="M33 49 L38 49" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M44 66 Q52 70 60 64" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round"/>${x||''}</svg>`,
-  grandma: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#b066ff" ${O}/>
-    <circle cx="50" cy="20" r="12" fill="#e8e8f0" ${O}/>
-    <ellipse cx="50" cy="56" rx="28" ry="30" fill="#ffd9c2" ${O}/>
-    <path d="M22 50 Q22 26 50 26 Q78 26 78 50 Q70 36 50 36 Q30 36 22 50Z" fill="#e8e8f0" ${O}/>
-    <circle cx="39" cy="54" r="9" fill="#fff" stroke="#111" stroke-width="3.5"/><circle cx="61" cy="54" r="9" fill="#fff" stroke="#111" stroke-width="3.5"/>
-    <path d="M48 54 H52" stroke="#111" stroke-width="3.5"/>
-    <circle cx="39" cy="55" r="3.5" fill="#111"/><circle cx="61" cy="55" r="3.5" fill="#111"/>
-    <ellipse cx="30" cy="66" rx="5" ry="3" fill="#ff8fa3"/><ellipse cx="70" cy="66" rx="5" ry="3" fill="#ff8fa3"/>
-    <path d="M42 72 Q50 78 58 72" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round"/>${x||''}</svg>`,
-  kevin: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#2fbf4a" ${O}/>
-    <ellipse cx="50" cy="58" rx="28" ry="28" fill="#ffc9a0" ${O}/>
-    <path d="M22 50 Q24 24 50 24 Q76 24 78 50 Z" fill="#ff3d3d" ${O}/>
-    <path d="M70 44 Q90 44 92 52 L76 52Z" fill="#ff3d3d" ${O}/>
-    <path d="M18 58 Q18 30 50 30 Q82 30 82 58" stroke="#222" stroke-width="6" fill="none"/>
-    <rect x="12" y="52" width="12" height="20" rx="5" fill="#222"/><rect x="76" y="52" width="12" height="20" rx="5" fill="#222"/>
-    <path d="M80 70 Q76 82 62 80" stroke="#222" stroke-width="3" fill="none"/><circle cx="61" cy="80" r="3.5" fill="#222"/>
-    <circle cx="40" cy="58" r="4" fill="#111"/><circle cx="60" cy="58" r="4" fill="#111"/>
-    <path d="M38 70 Q50 80 64 68" stroke="#111" stroke-width="3.5" fill="#fff" stroke-linecap="round"/>${x||''}</svg>`,
-  bot: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#2a7fff" ${O}/>
-    <path d="M50 12 V24" stroke="#111" stroke-width="4"/><circle cx="50" cy="11" r="5" fill="#ff3d3d" ${O}/>
-    <rect x="22" y="24" width="56" height="50" rx="10" fill="#d9e3f0" ${O}/>
-    <rect x="30" y="34" width="40" height="22" rx="6" fill="#111"/>
-    <rect x="35" y="40" width="10" height="10" rx="2" fill="#5affc8"/><rect x="55" y="40" width="10" height="10" rx="2" fill="#5affc8"/>
-    <path d="M36 64 H64" stroke="#111" stroke-width="4" stroke-dasharray="5 4"/>
-    <rect x="34" y="74" width="32" height="12" fill="#9aa8bb" ${O}/>${x||''}</svg>`,
-  dave: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#8fa3b8" ${O}/>
-    <path d="M28 86 Q24 50 40 34 Q52 22 64 32 Q74 42 70 60 Q78 74 72 88Z" fill="#9a9aae" ${O}/>
-    <path d="M58 60 Q66 66 70 60" fill="#6fd1a8" stroke="#111" stroke-width="3"/>
-    <path d="M60 40 L80 46 L62 50Z" fill="#ffb02e" ${O}/>
-    <circle cx="52" cy="40" r="7" fill="#fff" ${O}/><circle cx="54" cy="40" r="2.5" fill="#111"/>
-    <circle cx="38" cy="42" r="5" fill="#fff" stroke="#111" stroke-width="3"/><circle cx="37" cy="44" r="2" fill="#111"/>${x||''}</svg>`,
-  mom: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#ff3d3d" ${O}/>
-    <path d="M20 70 Q16 26 50 22 Q84 26 80 70 Z" fill="#5a3216" ${O}/>
-    <ellipse cx="50" cy="56" rx="24" ry="27" fill="#ffc9a0" ${O}/>
-    <path d="M34 46 L46 52 M66 46 L54 52" stroke="#111" stroke-width="4.5" stroke-linecap="round"/>
-    <circle cx="41" cy="57" r="3.8" fill="#111"/><circle cx="59" cy="57" r="3.8" fill="#111"/>
-    <path d="M40 72 Q50 66 60 72" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/>${x||''}</svg>`,
-};
-const CROWN = `<path d="M30 20 L36 5 L44 14 L50 1 L56 14 L64 5 L70 20 Z" fill="#ffc400" stroke="#111" stroke-width="3" stroke-linejoin="round"/>`;
-window.AV = AV;
-
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function fmt(s){ return esc(s).replace(/@([A-Za-z_][\w']*)/g, '<span class="at">@$1</span>'); }
 function rnd(seed){ let x = Math.sin(seed * 9301 + 49297) * 233280; return x - Math.floor(x); }
@@ -153,67 +145,69 @@ function animCss(p){
   const over = p < 1 ? Math.sin(p * Math.PI) * 0.08 : 0;
   return `transform: translateY(${((1-e)*50).toFixed(1)}px) scale(${(0.8 + 0.2*e + over).toFixed(3)}); opacity:${Math.min(1, p*2.5).toFixed(2)};`;
 }
+function avatar(c){ return AV[c.avatar](c.crown ? CROWN : ''); }
 
 window.render = function(st){
   document.getElementById('hooktext').innerHTML = esc(st.hook || '');
-  document.getElementById('hook').style.display = st.hook ? 'flex' : 'none';
-  document.getElementById('srv').textContent = st.server || '';
+  document.getElementById('hook').style.visibility = st.hook ? 'visible' : 'hidden';
+  document.getElementById('topic').textContent = st.topic || '';
   let html = '', lastWho = null;
   st.items.forEach((it, i) => {
     const an = (st.anim && st.anim.idx === i) ? animCss(st.anim.p) : '';
     if (it.type === 'sys') {
       lastWho = null;
-      html += `<div class="sys ${it.tone||''}" data-i="${i}" style="${an}"><span class="ico">${it.icon||'➜'}</span><span>${fmt(it.text)}</span></div>`;
+      html += `<div class="sys ${it.tone||''}" data-i="${i}" style="${an}"><span class="ico">${it.icon||'→'}</span><span>${fmt(it.text)}</span></div>`;
       return;
     }
     const c = st.chars[it.who];
     const cls = ['msg']; if (it.big) cls.push('big'); if (it.deleted) cls.push('deleted');
-    let inner = it.deleted ? 'message deleted' : fmt(it.text || '');
     let line = '';
-    if (it.text || it.deleted) line += `<div class="${cls.join(' ')}" data-i="${i}" style="${an}">${inner}</div>`;
+    if (it.text || it.deleted) line += `<div class="${cls.join(' ')}" data-i="${i}" style="${an}">${it.deleted ? 'message deleted' : fmt(it.text)}${it.edited ? ' <span class="ed">(edited)</span>' : ''}</div>`;
     if (it.img) line += `<div class="img" data-i="${i}" style="${it.text ? '' : an}"><div class="pic" style="background:${it.img.bg||'#f4f1ea'}">${it.img.emoji}<div class="cap">${esc(it.img.cap||'')}</div></div></div>`;
     const reacts = (it.reacts||[]).map(r => `<span class="react">${r.emoji}<span>${r.n}</span></span>`).join('');
     if (reacts) line += `<div class="reacts">${reacts}</div>`;
-    const mention = /@/.test(it.text||'');
-    if (lastWho === it.who && !mention) {
+    const mention = /@/.test(it.text||'') && it.mentionsMain;
+    const newGroup = lastWho !== it.who || it.reply || mention;
+    if (!newGroup) {
       html = html.replace(/<\/div><\/div><!--g-->$/, line + '</div></div><!--g-->');
     } else {
-      const tag = c.tag ? `<span class="tag ${c.tag==='MOD'||c.tag==='ADMIN'?'mod':''}">${esc(c.tag)}</span>` : '';
-      html += `<div class="group ${mention?'mention':''}"><div class="av">${AV[c.avatar](c.crown ? CROWN : '')}</div><div class="body">
+      const tag = c.tag ? `<span class="tag ${c.tag==='ADMIN'?'admin':''}">${esc(c.tag)}</span>` : '';
+      let rep = '';
+      if (it.reply) { const rc = st.chars[it.reply.who]; rep = `<div class="reply"><span class="mini">${avatar(rc)}</span><b style="color:${rc.color}">@${esc(rc.name)}</b><span class="t">${esc(it.reply.text)}</span></div>`; }
+      html += `<div class="group ${mention?'mention':''}">${rep}<div class="av">${avatar(c)}</div><div class="body">
         <div class="head"><span class="name" style="color:${c.color}">${esc(c.name)}</span>${tag}<span class="time">${it.time||''}</span></div>${line}</div></div><!--g-->`;
     }
-    lastWho = mention ? null : it.who;
+    lastWho = it.who;
   });
   document.getElementById('feed').innerHTML = html;
 
   const ty = document.getElementById('typing');
   if (st.typing && st.typing.names.length) {
     const ph = st.typing.phase % 3;
-    ty.innerHTML = `<span class="dots">${[0,1,2].map(k => `<span class="${k===ph?'on':''}"></span>`).join('')}</span><span>${st.typing.names.map(n => `<b style="color:#eceef7">${esc(n)}</b>`).join(', ')} ${st.typing.names.length>1?'are':'is'} typing...</span>`;
+    ty.innerHTML = `<span class="dots">${[0,1,2].map(k => `<span class="${k===ph?'on':''}"></span>`).join('')}</span><span><b>${st.typing.names.map(esc).join('</b>, <b>')}</b> ${st.typing.names.length>1?'are':'is'} typing...</span>`;
   } else ty.innerHTML = '';
 
-  // camera: zoom toward an item (or a point) + shake
+  // camera
   const stage = document.getElementById('stage');
+  stage.style.transform = ''; stage.style.filter = '';
   let tx = 0, ty2 = 0, z = 1;
   if (st.cam && st.cam.z > 1.001) {
     z = st.cam.z;
-    let cx = 540, cy = 960;
+    let cy = 960, left = 0, width = 1080;
     const el = st.cam.idx != null ? document.querySelector(`[data-i="${st.cam.idx}"]`) : null;
-    stage.style.transform = '';
-    let left = 0, width = 1080;
     if (el) {
       const row = el.closest('.group') || el;
       const rr = row.getBoundingClientRect(), er = el.getBoundingClientRect();
-      // measure the real text width, not the full block width
       let right = rr.left + 300;
       row.querySelectorAll('.head, .msg, .img, .sys span').forEach((n) => {
         const rg = document.createRange(); rg.selectNodeContents(n); right = Math.max(right, rg.getBoundingClientRect().right);
       });
-      left = rr.left + 16; width = right - left + 30;
+      const av = row.querySelector('.av');
+      left = (av ? av.getBoundingClientRect().left : rr.left) - 14; width = right - left + 30;
       cy = er.top + er.height / 2;
       z = Math.max(1.1, Math.min(z, 1040 / width));
     }
-    const k = st.cam.k ?? 1;  // 0..1 blend
+    const k = st.cam.k ?? 1;
     z = 1 + (z - 1) * k;
     tx = ((1080 - width * z) / 2 - left * z) * k;
     ty2 = (960 - cy * z) * k;
@@ -224,20 +218,21 @@ window.render = function(st){
   stage.style.transform = `translate(${(tx + sx).toFixed(1)}px, ${(ty2 + sy).toFixed(1)}px) scale(${z.toFixed(4)}) rotate(${rot.toFixed(2)}deg)`;
 
   const fry = st.fry || 0;
-  stage.style.filter = fry ? `saturate(${1 + fry * 3}) contrast(${1 + fry * 0.8}) brightness(${1 + fry * 0.1})` : '';
+  let filt = fry ? `saturate(${1 + fry * 3}) contrast(${1 + fry * 0.8}) brightness(${1 + fry * 0.1})` : '';
   document.getElementById('fry').style.opacity = (fry * 0.55).toFixed(2);
   document.getElementById('vignette').style.boxShadow = `inset 0 0 260px rgba(255,0,60,${(fry*0.8).toFixed(2)})`;
-  document.getElementById('flash').style.opacity = st.flash || 0;
-  document.getElementById('flash').style.background = st.flashColor || '#fff';
+  const fl = document.getElementById('flash'); fl.style.opacity = st.flash || 0; fl.style.background = st.flashColor || '#fff';
 
   const cu = document.getElementById('closeup');
   if (st.closeup) {
     cu.style.display = 'flex';
-    const c = st.chars[st.closeup.who];
-    document.getElementById('cuav').innerHTML = AV[c.avatar](c.crown ? CROWN : '');
+    document.getElementById('cuav').innerHTML = st.closeup.img
+      ? `<img src="${st.closeup.img}" style="width:100%;height:100%;display:block;border-radius:48px;border:8px solid #fff;box-shadow:0 20px 60px rgba(0,0,0,.6)">`
+      : avatar(st.chars[st.closeup.who]);
     const p = st.closeup.p ?? 1;
     document.getElementById('cuav').style.transform = `scale(${(0.6 + 0.4 * (1 - Math.pow(1 - p, 3)) + (st.closeup.pulse||0)).toFixed(3)}) rotate(${((st.closeup.tilt||0)).toFixed(1)}deg)`;
     document.getElementById('culine').textContent = st.closeup.text || '';
+    cu.style.background = st.closeup.bg || 'radial-gradient(circle, #2a1a3a 0%, #000 75%)';
     cu.style.filter = st.closeup.fry ? 'saturate(3.5) contrast(1.7)' : '';
   } else cu.style.display = 'none';
 
@@ -270,8 +265,9 @@ window.render = function(st){
       h += `<div style="top:${(rnd(s)*1900).toFixed(0)}px;height:${(10 + rnd(s*2)*90).toFixed(0)}px;background:${['#ff004c','#00e5ff','#7cff00'][i%3]};opacity:${(0.25 + rnd(s*3)*0.5).toFixed(2)};transform:translateX(${((rnd(s*4)-.5)*200).toFixed(0)}px)"></div>`;
     }
     g.innerHTML = h;
-    stage.style.filter += ` hue-rotate(${(rnd(st.glitch)*360).toFixed(0)}deg)`;
+    filt += ` hue-rotate(${(rnd(st.glitch)*360).toFixed(0)}deg)`;
   } else g.innerHTML = '';
+  stage.style.filter = filt;
 };
 </script>
 </body>

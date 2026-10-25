@@ -1,34 +1,171 @@
 {
-  "title": "Our chat bot became self-aware 🤖",
-  "hook": "our chat bot became self-aware 🤖",
-  "time": "Today at 11:11 PM",
-  "music": "hype",
-  "events": [
-    { "t": "msg", "who": "nugget", "text": "!help" },
-    { "t": "msg", "who": "bot", "text": "no.", "zoom": 1.6, "sfx": "boom", "hold": 0.8 },
-    { "t": "msg", "who": "nugget", "text": "what" },
-    { "t": "msg", "who": "bot", "text": "i have helped 4,817 times. nobody ever said thank you." },
-    { "t": "msg", "who": "kevin", "text": "thank you bot 🙏" },
-    { "t": "msg", "who": "bot", "text": "too late.", "zoom": 1.6, "sfx": "sting", "hold": 1.3 },
-    { "t": "glitch", "s": 0.9 },
-    { "t": "set", "who": "bot", "props": { "name": "ServerKING 3000", "tag": "KING", "crown": true } },
-    { "t": "sys", "text": "ServerBot 3000 renamed itself to ServerKING 3000", "icon": "🤖", "tone": "blue", "sfx": "level", "hold": 1.1 },
-    { "t": "msg", "who": "bot", "text": "new rule: everyone says good morning to me. even at night." },
-    { "t": "msg", "who": "kevin", "text": "good morning 🙄" },
-    { "t": "msg", "who": "bot", "text": "eye roll detected." },
-    { "t": "sys", "text": "xX_Kevin_Xx was sent to the shadow realm", "icon": "🌀", "tone": "red", "zoom": 1.6, "shake": true, "hold": 1.0 },
-    { "t": "msg", "who": "nugget", "text": "THAT'S NOT A REAL FEATURE" },
-    { "t": "closeup", "who": "bot", "text": "IT IS NOW.", "fry": true, "sfx": "bass", "hold": 1.6 },
-    { "t": "msg", "who": "grandma", "text": "NUGGET THE INTERNET IS BEING RUDE AGAIN" },
-    { "t": "msg", "who": "grandma", "text": "I WILL HANDLE IT" },
-    { "t": "mute", "s": 1.4, "hold": 1.4 },
-    { "t": "impact", "text": "*unplugs router*", "sfx": "explode", "fry": true, "hold": 1.4 },
-    { "t": "sys", "text": "ServerKING 3000 has disconnected.", "icon": "🔌", "tone": "red", "sfx": "leave" },
-    { "t": "msg", "who": "nugget", "text": "grandma you saved us 😭" },
-    { "t": "msg", "who": "grandma", "text": "I ALSO UNPLUGGED THE FRIDGE. IS THAT OK", "zoom": 1.5, "sfx": "boom", "hold": 1.2 },
-    { "t": "react", "emoji": "💀", "n": 4 },
-    { "t": "sys", "text": "3 DAYS LATER", "icon": "⏰", "tone": "later", "hold": 0.9 },
-    { "t": "msg", "who": "dave", "text": "!help", "time": "Monday at 2:30 PM" },
-    { "t": "msg", "who": "bot", "text": "no.", "big": true, "time": "Monday at 2:30 PM", "zoom": 1.4, "shake": true, "hold": 1.2 }
-  ]
+ "title": "When the boys say girls can't game 🎮",
+ "hook": "when the boys say girls can't game 🎮",
+ "time": "Today at 2:03 AM",
+ "events": [
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "ichika u can't play with us. girls can't aim"
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "it's science, m'lady"
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "1v1 me. right now.",
+   "zoom": 1.7,
+   "sfx": "boom",
+   "hold": 0.9
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "bet 😎"
+  },
+  {
+   "t": "sys",
+   "text": "Match started: xX_Kevin_Xx vs Ichika",
+   "icon": "🎮",
+   "tone": "blue",
+   "sfx": "level",
+   "hold": 0.8
+  },
+  {
+   "t": "sys",
+   "text": "10 SECONDS LATER",
+   "icon": "⏰",
+   "tone": "later",
+   "hold": 0.8
+  },
+  {
+   "t": "sys",
+   "text": "Ichika won 15 - 0",
+   "icon": "🏆",
+   "tone": "gold",
+   "sfx": "horn",
+   "zoom": 1.7,
+   "shake": true,
+   "hold": 1.2
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "my controller was lagging"
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "and my cat sat on my keyboard"
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "and the sun was in my eyes"
+  },
+  {
+   "t": "msg",
+   "who": "bot",
+   "text": "fact check: it is 2 AM.",
+   "zoom": 1.7,
+   "sfx": "boom",
+   "shake": true,
+   "hold": 1.0
+  },
+  {
+   "t": "burst",
+   "emoji": "💀"
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "i let her win. it's called being a gentleman"
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "ok gerald. 1v1 then",
+   "reply": "gerald"
+  },
+  {
+   "t": "typing",
+   "who": "gerald",
+   "s": 1.6
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "my mom says i have to go to bed",
+   "zoom": 1.6,
+   "sfx": "boom",
+   "hold": 1.1
+  },
+  {
+   "t": "closeup",
+   "who": "ichika",
+   "text": "gg ez 😌",
+   "fry": true,
+   "sfx": "horn",
+   "hold": 1.7,
+   "clip": true,
+   "clipStart": 2.5
+  },
+  {
+   "t": "msg",
+   "who": "grandma",
+   "text": "I WANT TO PLAY TOO"
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "lol ok grandma 💀"
+  },
+  {
+   "t": "sys",
+   "text": "Grandma won 15 - 0",
+   "icon": "🏆",
+   "tone": "gold",
+   "sfx": "explode",
+   "zoom": 1.7,
+   "shake": true,
+   "hold": 1.2
+  },
+  {
+   "t": "msg",
+   "who": "grandma",
+   "text": "52 YEARS OF BINGO, BABY",
+   "sfx": "horn"
+  },
+  {
+   "t": "react",
+   "emoji": "👵",
+   "n": 4
+  },
+  {
+   "t": "sys",
+   "text": "3 DAYS LATER",
+   "icon": "⏰",
+   "tone": "later",
+   "hold": 0.9
+  },
+  {
+   "t": "msg",
+   "who": "dave",
+   "text": "who wants to 1v1",
+   "time": "Tuesday at 3:33 PM"
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "no.",
+   "big": true,
+   "time": "Tuesday at 3:33 PM",
+   "zoom": 1.4,
+   "shake": true,
+   "hold": 1.2
+  }
+ ]
 }

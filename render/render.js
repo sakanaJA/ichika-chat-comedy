@@ -24,7 +24,7 @@ async function main() {
   const chars = {};
   for (const [k, v] of Object.entries(cfg.characters)) chars[k] = { name: v.name, color: v.color, avatar: v.avatar, crown: false, tag: v.tag || '' };
 
-  const st = { hook: ep.hook, server: ep.server || cfg.app.server, chars, items: [], typing: null, anim: null,
+  const st = { hook: ep.hook, topic: ep.topic || 'no creeps allowed (this means you kevin)', server: ep.server || cfg.app.server, chars, items: [], typing: null, anim: null,
     shake: 0, flash: 0, fry: 0, cam: null, closeup: null, impact: null, burst: null, glitch: 0 };
   const defTime = ep.time || 'Today at 3:14 AM';
 
@@ -41,6 +41,8 @@ async function main() {
   async function emit(n = 1) {
     if (n <= 0) return;
     await page.evaluate((s) => window.render(s), st);
+    await page.evaluate(() => Promise.all([...document.images].filter((i) => !i.complete)
+      .map((i) => new Promise((r) => { i.onload = i.onerror = r; }))));
     const f = path.join(work, 'uniq', `${String(uniq++).padStart(5, '0')}.jpg`);
     await page.screenshot({ path: f, type: 'jpeg', quality: 90 });
     for (let i = 0; i < n; i++) fs.symlinkSync(f, path.join(work, 'seq', `${String(frame++).padStart(6, '0')}.jpg`));
@@ -110,7 +112,14 @@ async function main() {
           await hold(typeS);
           st.typing = null;
         }
-        st.items.push({ type: 'msg', who: ev.who, text, img: ev.img, big: !!ev.big, time: ev.time || defTime });
+        let reply = null;
+        if (ev.reply) {
+          const rw = typeof ev.reply === 'string' ? ev.reply : ev.reply.who;
+          const [rm] = lastItem(rw);
+          reply = { who: rw, text: (ev.reply.text) || (rm && rm.text) || '' };
+        }
+        st.items.push({ type: 'msg', who: ev.who, text, img: ev.img, big: !!ev.big, time: ev.time || defTime, reply,
+          mentionsMain: /@ichika/i.test(text) });
         const idx = st.items.length - 1;
         S(ev.sfx || (ev.big ? 'boom' : 'ping'));
         await pop(idx);
@@ -139,7 +148,7 @@ async function main() {
         break;
       }
       case 'delete': { lastItem(ev.who)[0].deleted = true; S('whoosh'); await hold(ev.hold ?? 0.8); break; }
-      case 'edit': { const [m] = lastItem(ev.who); m.text = ev.text; S('ping'); await hold(ev.hold ?? 1); break; }
+      case 'edit': { const [m] = lastItem(ev.who); m.text = ev.text; m.edited = true; S('pop'); await hold(ev.hold ?? 1); break; }
       case 'set': { Object.assign(chars[ev.who], ev.props); if (ev.sfx) S(ev.sfx); if (ev.hold) await hold(ev.hold); break; }
       case 'typing': {
         st.typing = { names: [].concat(ev.who).map((w) => chars[w].name), phase: 0 };
@@ -178,8 +187,16 @@ async function main() {
         const n = sec(ev.hold ?? 1.6);
         for (let i = 0; i < n; i++) {
           const p = Math.min(1, (i + 1) / 5);
-          st.closeup = { who: ev.who, text: ev.text, p, fry: !!ev.fry, pulse: ev.fry ? Math.sin(i * 1.7) * 0.03 : 0, tilt: ev.fry ? Math.sin(i * 0.9) * 4 : 0 };
-          st.shake = ev.fry ? 0.5 : (i < 8 ? (8 - i) / 8 : 0);
+          st.closeup = { who: ev.who, text: ev.text, bg: ev.bg, p, fry: !!ev.fry, pulse: ev.fry ? Math.sin(i * 1.7) * 0.03 : 0, tilt: ev.fry ? Math.sin(i * 0.9) * 4 : 0 };
+          if (ev.clip) {
+            // play the character's animated clip (e.g. assets/ichika_clip/0001.jpg ...) instead of the still avatar
+            const dir = path.join(ROOT, 'assets', `${ev.who}_clip`);
+            const count = fs.readdirSync(dir).length;
+            const k = Math.min(count, Math.round((ev.clipStart || 0) * FPS) + i + 1);
+            st.closeup.img = 'file://' + path.join(dir, `${String(k).padStart(4, '0')}.jpg`);
+            st.closeup.pulse = 0; st.closeup.tilt = 0;
+          }
+          st.shake = ev.fry ? 0.5 : (ev.clip ? 0 : (i < 8 ? (8 - i) / 8 : 0));
           await emit(1);
         }
         st.closeup = null; st.shake = 0;

@@ -1,33 +1,217 @@
 {
-  "title": "I added my grandma to the group chat 💀",
-  "hook": "I added my grandma to the group chat 💀",
-  "time": "Today at 7:02 PM",
-  "events": [
-    { "t": "sys", "text": "Grandma joined the server. Say hi!", "icon": "👋", "tone": "green", "hold": 0.7 },
-    { "t": "msg", "who": "kevin", "text": "yo who invited a grandma 💀" },
-    { "t": "msg", "who": "grandma", "text": "HELLO NUGGET. IS THIS THE GOOGLE" },
-    { "t": "msg", "who": "nugget", "text": "no grandma this is a group chat" },
-    { "t": "msg", "who": "grandma", "text": "HOW DO I TURN OFF THE BIG LETTERS" },
-    { "t": "msg", "who": "grandma", "text": "nvm found it" },
-    { "t": "msg", "who": "grandma", "text": "HOW DO I TURN THEM BACK ON", "zoom": 1.5, "sfx": "boom", "hold": 0.9 },
-    { "t": "msg", "who": "kevin", "text": "LMAOOOOO" },
-    { "t": "react", "emoji": "💀", "n": 3 },
-    { "t": "msg", "who": "grandma", "text": "LOOK AT BABY NUGGET 🥺", "img": { "emoji": "🍗", "cap": "BABY NUGGET 2019", "bg": "#ffe1ec" }, "hold": 1.3 },
-    { "t": "msg", "who": "nugget", "text": "GRANDMA NO", "big": true, "sfx": "scratch", "shake": true },
-    { "t": "msg", "who": "kevin", "text": "bro was a DRUMSTICK 😭😭😭", "burst": "😭" },
-    { "t": "msg", "who": "grandma", "text": "WHO IS THIS RUDE CHILD" },
-    { "t": "msg", "who": "kevin", "text": "i'm a pro gamer, ma'am" },
-    { "t": "msg", "who": "grandma", "text": "I HAVE PLAYED BINGO FOR 52 YEARS" },
-    { "t": "msg", "who": "grandma", "text": "I AM ALSO A PRO GAMER" },
-    { "t": "typing", "who": "grandma", "s": 0.8 },
-    { "t": "mute", "s": 0.6, "hold": 0.6 },
-    { "t": "sys", "text": "Grandma banned xX_Kevin_Xx", "icon": "🔨", "tone": "red", "zoom": 1.7, "shake": true, "hold": 1.0 },
-    { "t": "msg", "who": "nugget", "text": "WHY DO YOU HAVE BAN POWERS" },
-    { "t": "msg", "who": "bot", "text": "new admin detected. bowing respectfully 🙇" },
-    { "t": "set", "who": "grandma", "props": { "crown": true, "tag": "ADMIN" }, "sfx": "level" },
-    { "t": "closeup", "who": "grandma", "text": "B I N G O .", "fry": true, "sfx": "horn", "hold": 1.6 },
-    { "t": "sys", "text": "3 DAYS LATER", "icon": "⏰", "tone": "later", "hold": 0.9 },
-    { "t": "msg", "who": "dave", "text": "hi grandma", "time": "Thursday at 11:52 AM", "zoom": 1.6, "sfx": "boom", "hold": 1.1 },
-    { "t": "react", "emoji": "💀", "n": 5 }
-  ]
+ "title": "Being the only girl in the gamer chat 💀",
+ "hook": "being the only girl in the gamer group chat 💀",
+ "time": "Today at 9:14 PM",
+ "events": [
+  {
+   "t": "sys",
+   "text": "Ichika just joined. Everyone say hi!",
+   "icon": "→",
+   "tone": "green",
+   "hold": 0.6
+  },
+  {
+   "t": "closeup",
+   "who": "ichika",
+   "text": "hi everyone! 👋",
+   "clip": true,
+   "clipStart": 0.2,
+   "hold": 1.5,
+   "sfx": "ding",
+   "bg": "radial-gradient(circle, #ffc2e2 0%, #5a2350 85%)"
+  },
+  {
+   "t": "typing",
+   "who": [
+    "kevin",
+    "gerald"
+   ],
+   "s": 0.8
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "hi",
+   "typing": 0,
+   "hold": 0.25
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "hello",
+   "typing": 0,
+   "hold": 0.25
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "hiii",
+   "typing": 0,
+   "hold": 0.25
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "hiiiiii 👋",
+   "typing": 0,
+   "hold": 0.4
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "*tips fedora* m'lady",
+   "zoom": 1.6,
+   "sfx": "boom",
+   "hold": 1.0
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "who added me here"
+  },
+  {
+   "t": "msg",
+   "who": "bot",
+   "text": "Ichika has been here for 9 seconds. DMs received: 47",
+   "zoom": 1.5,
+   "sfx": "boom",
+   "shake": true,
+   "hold": 1.4
+  },
+  {
+   "t": "burst",
+   "emoji": "💀"
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "47???"
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "the server was kinda dead before u 😳",
+   "reply": "ichika"
+  },
+  {
+   "t": "set",
+   "who": "kevin",
+   "props": {
+    "name": "ichika's bf (real)"
+   }
+  },
+  {
+   "t": "sys",
+   "text": "xX_Kevin_Xx changed their name to ichika's bf (real)",
+   "icon": "✏️",
+   "tone": "blue",
+   "sfx": "scratch",
+   "zoom": 1.5,
+   "shake": true,
+   "hold": 1.2
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "change it back. now."
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "i would never do that. i respect women."
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "unrelated but what's your shoe size",
+   "zoom": 1.6,
+   "sfx": "boom",
+   "hold": 1.1
+  },
+  {
+   "t": "msg",
+   "who": "bot",
+   "text": "creep detected."
+  },
+  {
+   "t": "sys",
+   "text": "Sir Gerald was timed out for 10 minutes",
+   "icon": "⏳",
+   "tone": "red",
+   "shake": true,
+   "hold": 0.9
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "ok i'm leaving"
+  },
+  {
+   "t": "mute",
+   "s": 0.7,
+   "hold": 0.7
+  },
+  {
+   "t": "sys",
+   "text": "Grandma joined the server.",
+   "icon": "→",
+   "tone": "green",
+   "sfx": "horn",
+   "hold": 0.6
+  },
+  {
+   "t": "msg",
+   "who": "grandma",
+   "text": "WHICH ONE OF YOU BOYS IS BOTHERING MY GRANDDAUGHTER",
+   "zoom": 1.4,
+   "shake": true,
+   "sfx": "boom",
+   "hold": 1.4
+  },
+  {
+   "t": "typing",
+   "who": "kevin",
+   "s": 1.1
+  },
+  {
+   "t": "sys",
+   "text": "ichika's bf (real) left the server.",
+   "icon": "🏃",
+   "tone": "red",
+   "sfx": "scratch",
+   "zoom": 1.6,
+   "hold": 0.9
+  },
+  {
+   "t": "closeup",
+   "who": "ichika",
+   "text": "ok maybe i'll stay 😌",
+   "sfx": "level",
+   "hold": 1.7,
+   "bg": "radial-gradient(circle, #ffc2e2 0%, #5a2350 85%)",
+   "clip": true,
+   "clipStart": 2.5
+  },
+  {
+   "t": "sys",
+   "text": "3 DAYS LATER",
+   "icon": "⏰",
+   "tone": "later",
+   "hold": 0.9
+  },
+  {
+   "t": "msg",
+   "who": "dave",
+   "text": "hi new girl",
+   "time": "Monday at 8:01 AM",
+   "zoom": 1.6,
+   "sfx": "boom",
+   "hold": 1.1
+  },
+  {
+   "t": "react",
+   "emoji": "💀",
+   "n": 5
+  }
+ ]
 }

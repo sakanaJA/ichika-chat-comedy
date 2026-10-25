@@ -1,4 +1,4 @@
-# Nugget's Hideout — chat-comedy YouTube channel
+# Ichika — chat-comedy YouTube channel
 
 Short comedy stories told as a group chat, for an English-speaking audience.
 Format inspired by chat-story channels, but **all characters, art, music and jokes are original**.
@@ -9,15 +9,18 @@ Format inspired by chat-story channels, but **all characters, art, music and jok
   Full videos are what earn watch hours (Shorts views do not count toward watch hours).
 - **Recurring cast** so viewers come back for the characters, not just one joke.
 
-## Fixed cast (server: "nugget's hideout", app: "Yapp" — fictional)
+## Fixed cast (server: "gamer cave", app: "Yapp" — fictional, Discord-style UI)
 | Character | Who they are | Running gag |
 |---|---|---|
-| **Nugget** (main) | Chicken nugget in sunglasses. Thinks he's cool. He's not. | Gets embarrassed every episode |
-| **Grandma** | Just learned the internet. TYPES IN CAPS. | Accidentally the most powerful person. Bingo. |
-| **xX_Kevin_Xx** | "Pro gamer", "basically famous". Lies. | Banned / leaves almost every episode. His mom. |
-| **ServerBot 3000** | The server bot. Too self-aware. Fact-checks people. | "no." |
-| **Dave** | A pigeon. Never reads the chat. | Shows up "3 DAYS LATER" at the end of EVERY episode |
+| **Ichika** (main) | 22, gamer girl. Long pink hair, cat-ear headphones. Cute but savage. Art: `assets/ichika_source.mp4` (owner's Runway clip). | The guys bother her; she always wins |
+| **xX_Kevin_Xx** | Try-hard simp. Lies. | Renames himself "ichika's bf (real)", gets banned, his mom shows up |
+| **Sir Gerald** | Fedora. "m'lady". "I respect women" then doesn't. | *tips fedora* |
+| **ServerBot 3000** | Mod bot, secretly on Ichika's side. | "creep detected." / fact checks |
+| **Grandma** | Ichika's grandma. CAPS. Accidentally OP. | Bingo |
+| **Dave** | A pigeon. Never reads the chat. | "3 DAYS LATER" ending every episode |
 | Kevin's Mom (guest) | Final boss. | "KEVIN." |
+
+Tone: light, PG-13 innuendo only (keeps full ads). Ichika is an adult and always wins.
 
 ## Style rules (high energy)
 - Fast pace: short typing, short holds, a hit every 3–5 seconds.

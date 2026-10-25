@@ -25,3 +25,9 @@
 - Faster pacing (typing 0.3–0.9s, holds 0.65–2.6s).
 - Rewrote ep001–ep003 (43–46s) and full001 (2:24).
 - Status: **waiting for owner review (v2)**.
+
+## 2026-10-25 (v3 — owner: anime-girl main, creepy guys, Discord-like UI)
+- Main character is now **Ichika** (owner's Runway clip). Avatar = still from the clip; close-ups play the real clip.
+- New cast: Kevin (simp), Sir Gerald (fedora), ServerBot, Grandma, Dave, Kevin's Mom.
+- Chat UI restyled to look like Discord (server rail, header, input bar, replies, mention highlight) — no Discord logo/name.
+- New ep001–ep003 (42–46s) + full001. Status: **waiting for owner review (v3)**.

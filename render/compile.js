@@ -40,7 +40,10 @@ async function main() {
   const cast = () => `<div class="row">${Object.entries(cfg.characters).map(([k, v]) =>
     `<div>${avs[k]}<span style="color:${v.color}">${v.name}</span></div>`).join('')}</div>`;
   async function shot(html, file) {
-    await page.setContent(base + html);
+    const tmp = path.join(__dirname, '.card.html');
+    fs.writeFileSync(tmp, '<!doctype html><meta charset="utf-8">' + base + html);
+    await page.goto('file://' + tmp);
+    await page.evaluate(() => Promise.all([...document.images].filter((i) => !i.complete).map((i) => new Promise((r) => { i.onload = i.onerror = r; }))));
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: file });
   }

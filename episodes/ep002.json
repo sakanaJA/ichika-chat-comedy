@@ -1,35 +1,186 @@
 {
-  "title": "He said he's 'basically famous' 💀",
-  "hook": "my friend said he's \"basically famous\" 💀",
-  "time": "Today at 4:37 PM",
-  "events": [
-    { "t": "msg", "who": "kevin", "text": "guys i'm literally famous now" },
-    { "t": "msg", "who": "kevin", "text": "i have 2 MILLION followers" },
-    { "t": "msg", "who": "nugget", "text": "since when" },
-    { "t": "msg", "who": "kevin", "text": "since today. i went viral" },
-    { "t": "msg", "who": "bot", "text": "fact check in progress..." },
-    { "t": "glitch", "s": 0.6 },
-    { "t": "msg", "who": "bot", "text": "xX_Kevin_Xx has 3 followers." },
-    { "t": "msg", "who": "bot", "text": "one of them is his mom.", "zoom": 1.7, "sfx": "boom", "shake": true, "hold": 1.0 },
-    { "t": "burst", "emoji": "💀" },
-    { "t": "msg", "who": "kevin", "text": "THE BOT IS LYING" },
-    { "t": "msg", "who": "kevin", "text": "i also have a girlfriend. she lives in canada" },
-    { "t": "msg", "who": "grandma", "text": "WHICH PART OF CANADA. I KNOW EVERYONE IN CANADA" },
-    { "t": "msg", "who": "kevin", "text": "uhh. the cold part" },
-    { "t": "react", "emoji": "🥶", "n": 3 },
-    { "t": "mute", "s": 3.2 },
-    { "t": "sys", "text": "Kevin's Mom joined the server.", "icon": "👀", "tone": "green", "sfx": "sting", "hold": 1.4 },
-    { "t": "msg", "who": "mom", "text": "KEVIN.", "big": true, "zoom": 1.5, "shake": true, "fry": 0.8, "hold": 0.6 },
-    { "t": "msg", "who": "mom", "text": "WHY IS THE DOG WEARING YOUR HEADSET" },
-    { "t": "msg", "who": "mom", "text": "AND WHO IS YOUR GIRLFRIEND IN CANADA" },
-    { "t": "typing", "who": "kevin", "s": 1.3 },
-    { "t": "sys", "text": "xX_Kevin_Xx left the server.", "icon": "🏃", "tone": "red", "sfx": "scratch", "zoom": 1.6, "hold": 0.9 },
-    { "t": "msg", "who": "grandma", "text": "I LIKE HER" },
-    { "t": "msg", "who": "mom", "text": "thank you. bingo on thursday?" },
-    { "t": "msg", "who": "grandma", "text": "BINGO ON THURSDAY.", "sfx": "horn" },
-    { "t": "react", "emoji": "🤝", "n": 2 },
-    { "t": "sys", "text": "3 DAYS LATER", "icon": "⏰", "tone": "later", "hold": 0.9 },
-    { "t": "msg", "who": "dave", "text": "congrats on being famous kevin", "time": "Sunday at 9:03 AM", "zoom": 1.6, "sfx": "boom", "hold": 1.2 },
-    { "t": "react", "emoji": "💀", "n": 4 }
-  ]
+ "title": "He asked me to send pics 😏",
+ "hook": "a guy in my group chat asked me for pics 😏",
+ "time": "Today at 11:48 PM",
+ "events": [
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "@ichika hey"
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "@ichika send pics 😏",
+   "zoom": 1.6,
+   "sfx": "boom",
+   "hold": 1.0
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "kevin. have some respect."
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "(send them to me instead)",
+   "zoom": 1.6,
+   "sfx": "boom",
+   "hold": 1.0
+  },
+  {
+   "t": "react",
+   "emoji": "🤨",
+   "n": 3
+  },
+  {
+   "t": "typing",
+   "who": "ichika",
+   "s": 1.2
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "text": "ok sure"
+  },
+  {
+   "t": "mute",
+   "s": 0.6,
+   "hold": 0.6
+  },
+  {
+   "t": "msg",
+   "who": "ichika",
+   "img": {
+    "emoji": "🥔",
+    "cap": "me rn",
+    "bg": "#ffe9c9"
+   },
+   "sfx": "boom",
+   "shake": true,
+   "hold": 1.3
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "..."
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "ok kinda cute ngl",
+   "zoom": 1.6,
+   "sfx": "scratch",
+   "shake": true,
+   "hold": 1.1
+  },
+  {
+   "t": "msg",
+   "who": "bot",
+   "text": "rizz check: potato 94. kevin 3."
+  },
+  {
+   "t": "burst",
+   "emoji": "💀"
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "*tips fedora* i would never fall for a potato"
+  },
+  {
+   "t": "msg",
+   "who": "gerald",
+   "text": "unless she's single",
+   "zoom": 1.6,
+   "sfx": "boom",
+   "hold": 1.0
+  },
+  {
+   "t": "mute",
+   "s": 3.0
+  },
+  {
+   "t": "sys",
+   "text": "Kevin's Mom joined the server.",
+   "icon": "👀",
+   "tone": "green",
+   "sfx": "sting",
+   "hold": 1.4
+  },
+  {
+   "t": "msg",
+   "who": "mom",
+   "text": "KEVIN.",
+   "big": true,
+   "zoom": 1.5,
+   "shake": true,
+   "fry": 0.8,
+   "hold": 0.6
+  },
+  {
+   "t": "msg",
+   "who": "mom",
+   "text": "WHO ARE YOU ASKING FOR PICTURES"
+  },
+  {
+   "t": "msg",
+   "who": "kevin",
+   "text": "the potato",
+   "zoom": 1.7,
+   "sfx": "boom",
+   "hold": 1.0
+  },
+  {
+   "t": "sys",
+   "text": "xX_Kevin_Xx has been grounded for 3 months",
+   "icon": "🔒",
+   "tone": "red",
+   "shake": true,
+   "sfx": "ban",
+   "hold": 1.0
+  },
+  {
+   "t": "closeup",
+   "who": "ichika",
+   "text": "rip bozo 🌸",
+   "clip": true,
+   "clipStart": 1.4,
+   "hold": 1.6,
+   "sfx": "horn",
+   "bg": "radial-gradient(circle, #ffc2e2 0%, #5a2350 85%)"
+  },
+  {
+   "t": "react",
+   "emoji": "🥔",
+   "n": 4
+  },
+  {
+   "t": "sys",
+   "text": "3 DAYS LATER",
+   "icon": "⏰",
+   "tone": "later",
+   "hold": 0.9
+  },
+  {
+   "t": "msg",
+   "who": "dave",
+   "text": "pics for ichika",
+   "img": {
+    "emoji": "🐦",
+    "cap": "me rn",
+    "bg": "#cfe8ff"
+   },
+   "time": "Friday at 6:44 PM",
+   "zoom": 1.3,
+   "sfx": "boom",
+   "hold": 1.3
+  },
+  {
+   "t": "react",
+   "emoji": "💀",
+   "n": 5
+  }
+ ]
 }
