@@ -6,10 +6,11 @@
 const fs = require('fs');
 const [mode, src, title, desc] = process.argv.slice(2);
 const CH = 'https://studio.youtube.com/channel/UCb0OjDwCQ5PHvX9i0UQBuPA';
-const LIB = "window.$$d = (sel, root = document) => { const out = []; const walk = (r) => { out.push(...r.querySelectorAll(sel)); for (const el of r.querySelectorAll('*')) if (el.shadowRoot) walk(el.shadowRoot); }; walk(root); return out; };\n' +
-  'window.$byText = (sel, re) => $$d(sel).find(e => re.test((e.textContent || '').trim()) && e.offsetParent !== null);\n' +
-  'window.sleep = (ms) => new Promise(r => setTimeout(r, ms));\n' +
-  '";
+const LIB = [
+  "window.$$d = (sel, root = document) => { const out = []; const walk = (r) => { out.push(...r.querySelectorAll(sel)); for (const el of r.querySelectorAll('*')) if (el.shadowRoot) walk(el.shadowRoot); }; walk(root); return out; };",
+  "window.$byText = (sel, re) => $$d(sel).find(e => re.test((e.textContent || '').trim()) && e.offsetParent !== null);",
+  "window.sleep = (ms) => new Promise(r => setTimeout(r, ms));",
+].join('\n') + '\n';
 setTimeout(() => { console.log('GLOBAL TIMEOUT'); process.exit(2); }, 15 * 60000);
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 (async () => {

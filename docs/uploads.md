@@ -40,6 +40,13 @@ Subscribe for more Ichika vs the group chat.
 Subscribe for more Ichika vs the group chat.
 #shorts #groupchat #funny #anime #streamer #chatstory
 
+## ep005 — Short
+**Title:** He wrote me a love poem 📜 #shorts
+**Description:**
+Roses are red. ServerBot is undefeated.
+Subscribe for more Ichika vs the group chat.
+#shorts #groupchat #funny #anime #poem #chatstory
+
 ## full001 — Full video
 **Title:** Ichika vs The Group Chat (Part 1)
 **Description:**
