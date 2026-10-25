@@ -79,6 +79,7 @@
   - ep007 https://youtube.com/shorts/-j7dVrVFLJ0
   - ep008 https://youtube.com/shorts/cBEoh3_y1xU
   - ep009 https://youtube.com/shorts/_NnwKdCqdMI
-- **Blocked:** ep010 + full002 hit YouTube's "Daily upload limit reached" (unverified channel). Needs the owner's
-  one-time phone verification (Studio → Verify) or a 24h wait, then:
-  `python3 upall.py ep010 full002` equivalent → `node render/upload.js upload <file> <title> <desc>` with metadata from `docs/uploads.md`.
+  - ep010 https://youtube.com/shorts/gqsEPcz0FeA
+  - full002 https://youtu.be/dLY9at5hblk
+- ep010 + full002 first hit "Daily upload limit reached"; the owner did the one-time phone verification, then both uploaded.
+- Note: an unrelated draft "the quiet after full" (1:01) is in Studio Shorts drafts — not ours, left untouched.
