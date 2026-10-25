@@ -1,29 +1,43 @@
 {
-  "app": { "name": "Yapp", "server": "the snack drawer", "channel": "general" },
+  "app": { "name": "Yapp", "server": "nugget's hideout", "channel": "general" },
   "characters": {
-    "mochi": {
-      "name": "Mochi",
-      "color": "#ff9ec4",
-      "avatar": "mochi",
-      "bio": "A round rice-cake blob. Pure chaos. Types in ALL CAPS when excited. Starts every problem."
+    "nugget": {
+      "name": "Nugget",
+      "color": "#ffb02e",
+      "avatar": "nugget",
+      "role": "MAIN",
+      "bio": "A chicken nugget in sunglasses. The main guy. Thinks he is the coolest person alive. He is not. Owns the server, but nobody respects that."
     },
-    "pickle": {
-      "name": "Pickle",
-      "color": "#7ddc6b",
-      "avatar": "pickle",
-      "bio": "A frog. Deadpan. Short replies. Somehow always right. The punchline delivery guy."
+    "grandma": {
+      "name": "Grandma",
+      "color": "#d68cff",
+      "avatar": "grandma",
+      "bio": "Nugget's grandma. Just learned the internet. TYPES IN CAPS. Presses every button. Accidentally the most powerful person in the server. Loves bingo."
     },
-    "toast": {
-      "name": "Toast",
-      "color": "#f2c37a",
-      "avatar": "toast",
-      "bio": "A slice of bread. Anxious overthinker. Writes paragraphs. Reads too much into everything."
+    "kevin": {
+      "name": "xX_Kevin_Xx",
+      "color": "#5ee05a",
+      "avatar": "kevin",
+      "bio": "Self-proclaimed 'pro gamer' and 'basically famous'. Lies about everything. Gets banned in almost every episode. His mom is scarier than any boss fight."
     },
-    "waffles": {
-      "name": "Waffles",
-      "color": "#ffcf3f",
-      "avatar": "waffles",
-      "bio": "A waffle who wants power. Server admin energy. Loves rules, breaks them first."
+    "bot": {
+      "name": "ServerBot 3000",
+      "color": "#5ab8ff",
+      "avatar": "bot",
+      "tag": "BOT",
+      "bio": "The server's moderation bot. Slightly too self-aware. Fact-checks everyone. Dramatic. Wants to be loved."
+    },
+    "dave": {
+      "name": "Dave",
+      "color": "#b8b8c8",
+      "avatar": "dave",
+      "bio": "A pigeon. Never reads the chat. Shows up at the end of EVERY episode, days late, with a reply that makes no sense. The running gag."
+    },
+    "mom": {
+      "name": "Kevin's Mom",
+      "color": "#ff5c5c",
+      "avatar": "mom",
+      "bio": "Guest. Appears when Kevin lies too hard. Final boss."
     }
   }
 }

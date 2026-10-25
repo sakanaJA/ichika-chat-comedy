@@ -3,167 +3,276 @@
 <head>
 <meta charset="utf-8">
 <style>
-  @font-face { font-family: "Inter"; src: local("Inter"); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #12131c; }
-  body { font-family: "Inter", "Noto Color Emoji", sans-serif; color: #e9eaf2; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0e0f16; }
+  body { font-family: "Inter", "Noto Color Emoji", sans-serif; color: #eceef7; }
 
-  #hook {
-    position: absolute; left: 0; top: 0; width: 1080px; height: 360px;
-    display: flex; align-items: center; justify-content: center; padding: 60px 70px 30px;
-    background: linear-gradient(180deg, #12131c 0%, #12131c 100%);
-  }
-  #hook .card {
-    background: #ff8a3d; color: #1a1205; font-weight: 900; font-size: 58px; line-height: 1.12;
-    text-align: center; padding: 26px 36px; border-radius: 28px; transform: rotate(-1.5deg);
-    box-shadow: 0 10px 0 #b8541a;
-  }
+  #stage { position: absolute; inset: 0; transform-origin: 0 0; }
+  #hook { position: absolute; left: 0; top: 0; width: 1080px; height: 340px;
+    display: flex; align-items: center; justify-content: center; padding: 60px 60px 20px; }
+  #hook .card { background: #fff; color: #0e0f16; font-weight: 900; font-size: 60px; line-height: 1.08;
+    text-align: center; padding: 24px 34px; border-radius: 26px; border: 6px solid #0e0f16;
+    box-shadow: 10px 10px 0 #ff3d6e; }
 
-  #window {
-    position: absolute; left: 30px; top: 380px; width: 1020px; height: 1170px;
-    background: #1d1f2d; border-radius: 36px; overflow: hidden;
-    display: flex; flex-direction: column; border: 3px solid #2a2d40;
-  }
-  #topbar {
-    height: 110px; flex: none; display: flex; align-items: center; padding: 0 36px; gap: 18px;
-    background: #191b27; border-bottom: 3px solid #2a2d40;
-  }
-  #topbar .hash { font-size: 54px; color: #7a7f9e; font-weight: 700; }
+  #window { position: absolute; left: 24px; top: 360px; width: 1032px; height: 1200px;
+    background: #1b1d29; border-radius: 34px; overflow: hidden; display: flex; flex-direction: column;
+    border: 4px solid #2b2e42; }
+  #topbar { height: 104px; flex: none; display: flex; align-items: center; padding: 0 34px; gap: 16px;
+    background: #171924; border-bottom: 4px solid #2b2e42; }
+  #topbar .hash { font-size: 54px; color: #767b9c; font-weight: 800; }
   #topbar .chan { font-size: 42px; font-weight: 800; }
-  #topbar .srv { margin-left: auto; font-size: 30px; color: #8d92b3; font-weight: 600;
-    background: #262939; padding: 10px 20px; border-radius: 40px; }
+  #topbar .srv { margin-left: auto; font-size: 30px; color: #9aa0c3; font-weight: 700;
+    background: #25283a; padding: 10px 22px; border-radius: 40px; }
 
-  #feed {
-    flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 10px 0 18px;
-  }
-  .group { display: flex; gap: 24px; padding: 18px 36px 6px; }
-  .group .av { width: 104px; height: 104px; flex: none; border-radius: 50%; position: relative; }
-  .group .av svg { width: 104px; height: 104px; display: block; }
-  .group .body { flex: 1; min-width: 0; }
-  .group .head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 4px; }
-  .group .name { font-size: 40px; font-weight: 800; }
-  .group .tag { font-size: 24px; font-weight: 800; background: #ff8a3d; color: #1a1205;
-    padding: 3px 12px; border-radius: 10px; position: relative; top: -4px; }
-  .group .time { font-size: 26px; color: #6f7494; font-weight: 500; }
-  .msg { font-size: 46px; line-height: 1.28; font-weight: 500; padding: 4px 0; word-wrap: break-word;
-    transform-origin: left center; }
-  .msg.big { font-size: 92px; font-weight: 900; line-height: 1.05; }
+  #feed { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 8px 0 14px; }
+  .group { display: flex; gap: 22px; padding: 16px 32px 6px; }
+  .group.mention { background: rgba(255, 196, 0, .09); box-shadow: inset 8px 0 0 #ffc400; }
+  .av { width: 108px; height: 108px; flex: none; }
+  .av svg { width: 108px; height: 108px; display: block; }
+  .body { flex: 1; min-width: 0; }
+  .head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 2px; }
+  .name { font-size: 42px; font-weight: 800; }
+  .tag { font-size: 24px; font-weight: 900; background: #5865ff; color: #fff; padding: 3px 12px; border-radius: 9px;
+    position: relative; top: -5px; }
+  .tag.mod { background: #ffc400; color: #1b1300; }
+  .time { font-size: 26px; color: #6f7494; font-weight: 600; }
+  .msg { font-size: 48px; line-height: 1.25; font-weight: 500; padding: 3px 0; word-wrap: break-word; transform-origin: left center; }
+  .msg.big { font-size: 96px; font-weight: 900; line-height: 1.02; letter-spacing: -1px; }
   .msg.deleted { color: #6f7494; font-style: italic; font-size: 38px; }
-  .msg.edited::after { content: " (edited)"; font-size: 26px; color: #6f7494; }
+  .msg .at { background: rgba(88, 101, 255, .3); color: #c9cdff; border-radius: 8px; padding: 0 6px; font-weight: 700; }
+  .img { margin: 8px 0; width: 640px; border-radius: 22px; overflow: hidden; border: 4px solid #2b2e42; background: #f4f1ea;
+    transform-origin: left top; }
+  .img .pic { height: 360px; display: flex; align-items: center; justify-content: center; font-size: 210px; position: relative; }
+  .img .cap { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: 46px; font-weight: 900;
+    color: #fff; -webkit-text-stroke: 3px #000; paint-order: stroke fill; }
   .reacts { display: flex; gap: 12px; margin: 6px 0 4px; }
-  .react { background: #2b2f48; border: 3px solid #4c5280; border-radius: 22px; padding: 4px 16px;
-    font-size: 34px; font-weight: 700; display: flex; gap: 10px; align-items: center; }
+  .react { background: #2b2f48; border: 3px solid #5865ff; border-radius: 22px; padding: 4px 16px; font-size: 36px;
+    font-weight: 800; display: flex; gap: 10px; align-items: center; }
+  .sys { display: flex; align-items: center; gap: 18px; padding: 14px 32px 14px 60px; font-size: 38px; color: #a6abcc; font-weight: 700; }
+  .sys .ico { font-size: 42px; }
+  .sys.red { color: #ff5c5c; } .sys.gold { color: #ffc400; } .sys.green { color: #5ee05a; } .sys.blue { color: #5ab8ff; }
+  .sys.later { justify-content: center; padding-left: 32px; color: #fff; font-size: 44px; font-weight: 900; letter-spacing: 2px; }
 
-  .sys { display: flex; align-items: center; gap: 18px; padding: 16px 36px 16px 64px;
-    font-size: 36px; color: #a3a8c9; font-weight: 600; }
-  .sys .ico { font-size: 40px; }
-  .sys.red { color: #ff6b6b; }
-  .sys.gold { color: #ffcf3f; }
-
-  #typing { height: 70px; flex: none; padding: 0 40px; font-size: 32px; color: #a3a8c9;
-    display: flex; align-items: center; gap: 14px; font-weight: 600; }
+  #typing { height: 66px; flex: none; padding: 0 38px; font-size: 32px; color: #a6abcc; display: flex; align-items: center; gap: 14px; font-weight: 600; }
   #typing .dots { display: flex; gap: 8px; }
-  #typing .dots span { width: 14px; height: 14px; border-radius: 50%; background: #a3a8c9; opacity: .35; }
+  #typing .dots span { width: 14px; height: 14px; border-radius: 50%; background: #a6abcc; opacity: .3; }
   #typing .dots span.on { opacity: 1; }
+  #input { height: 116px; flex: none; margin: 0 26px 26px; background: #25283a; border-radius: 26px; display: flex;
+    align-items: center; padding: 0 34px; font-size: 38px; color: #6f7494; font-weight: 500; }
 
-  #input { height: 120px; flex: none; margin: 0 28px 28px; background: #262939; border-radius: 26px;
-    display: flex; align-items: center; padding: 0 34px; font-size: 38px; color: #6f7494; font-weight: 500; }
-
-  #shake { position: absolute; inset: 0; }
-  #flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+  /* overlays */
+  #fry { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; background: radial-gradient(circle, #ffb070 0%, #ff2a00 100%); opacity: 0; }
+  #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+  #closeup { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 40px;
+    background: radial-gradient(circle, #2a1a3a 0%, #000 75%); }
+  #closeup .big { width: 760px; height: 760px; }
+  #closeup .big svg { width: 100%; height: 100%; }
+  #closeup .line { font-size: 84px; font-weight: 900; text-align: center; max-width: 960px; color: #fff; line-height: 1.05;
+    -webkit-text-stroke: 5px #000; paint-order: stroke fill; }
+  #impact { position: absolute; left: 0; right: 0; top: 820px; text-align: center; font-size: 150px; font-weight: 900;
+    color: #fff; -webkit-text-stroke: 10px #000; paint-order: stroke fill; line-height: .95; display: none; padding: 0 30px; }
+  #burst { position: absolute; inset: 0; pointer-events: none; }
+  #burst span { position: absolute; font-size: 130px; }
+  #glitch { position: absolute; inset: 0; pointer-events: none; }
+  #glitch div { position: absolute; left: 0; right: 0; mix-blend-mode: screen; }
+  #vignette { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 260px rgba(255,0,60,.0); }
 </style>
 </head>
 <body>
-<div id="shake">
+<div id="stage">
   <div id="hook"><div class="card" id="hooktext"></div></div>
   <div id="window">
-    <div id="topbar"><span class="hash">#</span><span class="chan" id="chan">general</span><span class="srv" id="srv"></span></div>
+    <div id="topbar"><span class="hash">#</span><span class="chan">general</span><span class="srv" id="srv"></span></div>
     <div id="feed"></div>
     <div id="typing"></div>
     <div id="input">Message #general</div>
   </div>
 </div>
+<div id="fry"></div>
+<div id="glitch"></div>
+<div id="burst"></div>
+<div id="closeup"><div class="big" id="cuav"></div><div class="line" id="culine"></div></div>
+<div id="impact"></div>
+<div id="vignette"></div>
 <div id="flash"></div>
 <script>
+const O = 'stroke="#111" stroke-width="4" stroke-linejoin="round"';
 const AV = {
-  mochi: (c) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#ffd6e6"/>
-    <ellipse cx="50" cy="58" rx="36" ry="30" fill="#fffaf5"/>
-    <circle cx="38" cy="55" r="4.5" fill="#2b2230"/><circle cx="62" cy="55" r="4.5" fill="#2b2230"/>
-    <ellipse cx="29" cy="64" rx="6" ry="3.5" fill="#ff9ec4"/><ellipse cx="71" cy="64" rx="6" ry="3.5" fill="#ff9ec4"/>
-    <path d="M45 64 Q50 69 55 64" stroke="#2b2230" stroke-width="3" fill="none" stroke-linecap="round"/>${c}</svg>`,
-  pickle: (c) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#d4f5cc"/>
-    <ellipse cx="50" cy="62" rx="38" ry="28" fill="#5cbf4a"/>
-    <circle cx="33" cy="38" r="13" fill="#5cbf4a"/><circle cx="67" cy="38" r="13" fill="#5cbf4a"/>
-    <circle cx="33" cy="38" r="8" fill="#fff"/><circle cx="67" cy="38" r="8" fill="#fff"/>
-    <rect x="28" y="36" width="10" height="4" rx="2" fill="#1e2a1b"/><rect x="62" y="36" width="10" height="4" rx="2" fill="#1e2a1b"/>
-    <path d="M36 68 L64 68" stroke="#1e2a1b" stroke-width="3.5" stroke-linecap="round"/>${c}</svg>`,
-  toast: (c) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#fbe7c4"/>
-    <path d="M22 44 Q22 22 50 22 Q78 22 78 44 L76 82 Q76 86 72 86 L28 86 Q24 86 24 82 Z" fill="#c98a3e"/>
-    <path d="M28 46 Q28 29 50 29 Q72 29 72 46 L70 78 Q70 80 68 80 L32 80 Q30 80 30 78 Z" fill="#f6d79b"/>
-    <circle cx="41" cy="55" r="4" fill="#3a2614"/><circle cx="59" cy="55" r="4" fill="#3a2614"/>
-    <path d="M35 46 L45 49 M65 46 L55 49" stroke="#3a2614" stroke-width="2.6" stroke-linecap="round"/>
-    <path d="M44 68 Q50 64 56 68" stroke="#3a2614" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <ellipse cx="66" cy="44" rx="2.5" ry="4" fill="#7cc6ff"/>${c}</svg>`,
-  waffles: (c) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#fff0bf"/>
-    <rect x="20" y="26" width="60" height="58" rx="12" fill="#e9a72c"/>
-    <g stroke="#c98417" stroke-width="3"><path d="M35 28 V82 M50 28 V82 M65 28 V82 M22 41 H78 M22 55 H78 M22 69 H78"/></g>
-    <circle cx="40" cy="52" r="5" fill="#2e1f08"/><circle cx="60" cy="52" r="5" fill="#2e1f08"/>
-    <circle cx="41.5" cy="50.5" r="1.6" fill="#fff"/><circle cx="61.5" cy="50.5" r="1.6" fill="#fff"/>
-    <path d="M42 66 Q50 73 58 66" stroke="#2e1f08" stroke-width="3.2" fill="none" stroke-linecap="round"/>${c}</svg>`,
+  nugget: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#ff8c1a" ${O}/>
+    <path d="M22 58 Q18 36 34 28 Q46 18 62 24 Q82 28 80 50 Q84 70 66 78 Q50 86 34 78 Q20 72 22 58Z" fill="#f5b445" ${O}/>
+    <circle cx="36" cy="44" r="2.5" fill="#c9852a"/><circle cx="62" cy="64" r="2.5" fill="#c9852a"/><circle cx="54" cy="34" r="2" fill="#c9852a"/>
+    <path d="M28 46 H72 L70 54 Q66 60 58 58 L54 50 H46 L42 58 Q34 60 30 54Z" fill="#111"/>
+    <path d="M33 49 L38 49" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M44 66 Q52 70 60 64" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round"/>${x||''}</svg>`,
+  grandma: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#b066ff" ${O}/>
+    <circle cx="50" cy="20" r="12" fill="#e8e8f0" ${O}/>
+    <ellipse cx="50" cy="56" rx="28" ry="30" fill="#ffd9c2" ${O}/>
+    <path d="M22 50 Q22 26 50 26 Q78 26 78 50 Q70 36 50 36 Q30 36 22 50Z" fill="#e8e8f0" ${O}/>
+    <circle cx="39" cy="54" r="9" fill="#fff" stroke="#111" stroke-width="3.5"/><circle cx="61" cy="54" r="9" fill="#fff" stroke="#111" stroke-width="3.5"/>
+    <path d="M48 54 H52" stroke="#111" stroke-width="3.5"/>
+    <circle cx="39" cy="55" r="3.5" fill="#111"/><circle cx="61" cy="55" r="3.5" fill="#111"/>
+    <ellipse cx="30" cy="66" rx="5" ry="3" fill="#ff8fa3"/><ellipse cx="70" cy="66" rx="5" ry="3" fill="#ff8fa3"/>
+    <path d="M42 72 Q50 78 58 72" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round"/>${x||''}</svg>`,
+  kevin: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#2fbf4a" ${O}/>
+    <ellipse cx="50" cy="58" rx="28" ry="28" fill="#ffc9a0" ${O}/>
+    <path d="M22 50 Q24 24 50 24 Q76 24 78 50 Z" fill="#ff3d3d" ${O}/>
+    <path d="M70 44 Q90 44 92 52 L76 52Z" fill="#ff3d3d" ${O}/>
+    <path d="M18 58 Q18 30 50 30 Q82 30 82 58" stroke="#222" stroke-width="6" fill="none"/>
+    <rect x="12" y="52" width="12" height="20" rx="5" fill="#222"/><rect x="76" y="52" width="12" height="20" rx="5" fill="#222"/>
+    <path d="M80 70 Q76 82 62 80" stroke="#222" stroke-width="3" fill="none"/><circle cx="61" cy="80" r="3.5" fill="#222"/>
+    <circle cx="40" cy="58" r="4" fill="#111"/><circle cx="60" cy="58" r="4" fill="#111"/>
+    <path d="M38 70 Q50 80 64 68" stroke="#111" stroke-width="3.5" fill="#fff" stroke-linecap="round"/>${x||''}</svg>`,
+  bot: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#2a7fff" ${O}/>
+    <path d="M50 12 V24" stroke="#111" stroke-width="4"/><circle cx="50" cy="11" r="5" fill="#ff3d3d" ${O}/>
+    <rect x="22" y="24" width="56" height="50" rx="10" fill="#d9e3f0" ${O}/>
+    <rect x="30" y="34" width="40" height="22" rx="6" fill="#111"/>
+    <rect x="35" y="40" width="10" height="10" rx="2" fill="#5affc8"/><rect x="55" y="40" width="10" height="10" rx="2" fill="#5affc8"/>
+    <path d="M36 64 H64" stroke="#111" stroke-width="4" stroke-dasharray="5 4"/>
+    <rect x="34" y="74" width="32" height="12" fill="#9aa8bb" ${O}/>${x||''}</svg>`,
+  dave: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#8fa3b8" ${O}/>
+    <path d="M28 86 Q24 50 40 34 Q52 22 64 32 Q74 42 70 60 Q78 74 72 88Z" fill="#9a9aae" ${O}/>
+    <path d="M58 60 Q66 66 70 60" fill="#6fd1a8" stroke="#111" stroke-width="3"/>
+    <path d="M60 40 L80 46 L62 50Z" fill="#ffb02e" ${O}/>
+    <circle cx="52" cy="40" r="7" fill="#fff" ${O}/><circle cx="54" cy="40" r="2.5" fill="#111"/>
+    <circle cx="38" cy="42" r="5" fill="#fff" stroke="#111" stroke-width="3"/><circle cx="37" cy="44" r="2" fill="#111"/>${x||''}</svg>`,
+  mom: (x) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#ff3d3d" ${O}/>
+    <path d="M20 70 Q16 26 50 22 Q84 26 80 70 Z" fill="#5a3216" ${O}/>
+    <ellipse cx="50" cy="56" rx="24" ry="27" fill="#ffc9a0" ${O}/>
+    <path d="M34 46 L46 52 M66 46 L54 52" stroke="#111" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="41" cy="57" r="3.8" fill="#111"/><circle cx="59" cy="57" r="3.8" fill="#111"/>
+    <path d="M40 72 Q50 66 60 72" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/>${x||''}</svg>`,
 };
-const CROWN = `<path d="M30 20 L36 6 L44 15 L50 2 L56 15 L64 6 L70 20 Z" fill="#ffcf3f" stroke="#b8860b" stroke-width="2"/>`;
+const CROWN = `<path d="M30 20 L36 5 L44 14 L50 1 L56 14 L64 5 L70 20 Z" fill="#ffc400" stroke="#111" stroke-width="3" stroke-linejoin="round"/>`;
+window.AV = AV;
 
-function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function fmt(s){ return esc(s).replace(/@([A-Za-z_][\w']*)/g, '<span class="at">@$1</span>'); }
+function rnd(seed){ let x = Math.sin(seed * 9301 + 49297) * 233280; return x - Math.floor(x); }
+function animCss(p){
+  const e = 1 - Math.pow(1 - p, 3);
+  const over = p < 1 ? Math.sin(p * Math.PI) * 0.08 : 0;
+  return `transform: translateY(${((1-e)*50).toFixed(1)}px) scale(${(0.8 + 0.2*e + over).toFixed(3)}); opacity:${Math.min(1, p*2.5).toFixed(2)};`;
+}
 
-// state: {hook, server, chars:{id:{name,color,avatar,crown,tag}}, items:[...], typing:{names:[...],phase}, anim:{idx,p}, shake, flash}
 window.render = function(st){
   document.getElementById('hooktext').innerHTML = esc(st.hook || '');
+  document.getElementById('hook').style.display = st.hook ? 'flex' : 'none';
   document.getElementById('srv').textContent = st.server || '';
-  const feed = document.getElementById('feed');
-  let html = '';
-  let lastWho = null;
+  let html = '', lastWho = null;
   st.items.forEach((it, i) => {
-    const animStyle = (st.anim && st.anim.idx === i) ? animCss(st.anim.p) : '';
+    const an = (st.anim && st.anim.idx === i) ? animCss(st.anim.p) : '';
     if (it.type === 'sys') {
       lastWho = null;
-      html += `<div class="sys ${it.tone||''}" style="${animStyle}"><span class="ico">${it.icon||'➜'}</span><span>${esc(it.text)}</span></div>`;
+      html += `<div class="sys ${it.tone||''}" data-i="${i}" style="${an}"><span class="ico">${it.icon||'➜'}</span><span>${fmt(it.text)}</span></div>`;
       return;
     }
     const c = st.chars[it.who];
-    const cls = ['msg']; if (it.big) cls.push('big'); if (it.deleted) cls.push('deleted'); if (it.edited) cls.push('edited');
-    const text = it.deleted ? 'message deleted' : esc(it.text);
+    const cls = ['msg']; if (it.big) cls.push('big'); if (it.deleted) cls.push('deleted');
+    let inner = it.deleted ? 'message deleted' : fmt(it.text || '');
+    let line = '';
+    if (it.text || it.deleted) line += `<div class="${cls.join(' ')}" data-i="${i}" style="${an}">${inner}</div>`;
+    if (it.img) line += `<div class="img" data-i="${i}" style="${it.text ? '' : an}"><div class="pic" style="background:${it.img.bg||'#f4f1ea'}">${it.img.emoji}<div class="cap">${esc(it.img.cap||'')}</div></div></div>`;
     const reacts = (it.reacts||[]).map(r => `<span class="react">${r.emoji}<span>${r.n}</span></span>`).join('');
-    const line = `<div class="${cls.join(' ')}" style="${animStyle}">${text}</div>${reacts ? `<div class="reacts">${reacts}</div>`:''}`;
-    if (lastWho === it.who && !it.newGroup) {
+    if (reacts) line += `<div class="reacts">${reacts}</div>`;
+    const mention = /@/.test(it.text||'');
+    if (lastWho === it.who && !mention) {
       html = html.replace(/<\/div><\/div><!--g-->$/, line + '</div></div><!--g-->');
     } else {
-      const tag = c.tag ? `<span class="tag">${esc(c.tag)}</span>` : '';
-      html += `<div class="group"><div class="av">${AV[c.avatar](c.crown ? CROWN : '')}</div><div class="body">
-        <div class="head"><span class="name" style="color:${c.color}">${esc(c.name)}</span>${tag}<span class="time">${it.time||'Today at 3:14 AM'}</span></div>${line}</div></div><!--g-->`;
+      const tag = c.tag ? `<span class="tag ${c.tag==='MOD'||c.tag==='ADMIN'?'mod':''}">${esc(c.tag)}</span>` : '';
+      html += `<div class="group ${mention?'mention':''}"><div class="av">${AV[c.avatar](c.crown ? CROWN : '')}</div><div class="body">
+        <div class="head"><span class="name" style="color:${c.color}">${esc(c.name)}</span>${tag}<span class="time">${it.time||''}</span></div>${line}</div></div><!--g-->`;
     }
-    lastWho = it.who;
+    lastWho = mention ? null : it.who;
   });
-  feed.innerHTML = html;
+  document.getElementById('feed').innerHTML = html;
 
   const ty = document.getElementById('typing');
   if (st.typing && st.typing.names.length) {
     const ph = st.typing.phase % 3;
-    const dots = [0,1,2].map(k => `<span class="${k===ph?'on':''}"></span>`).join('');
-    const who = st.typing.names.map(n => `<b style="color:#e9eaf2">${esc(n)}</b>`).join(', ');
-    ty.innerHTML = `<span class="dots">${dots}</span><span>${who} ${st.typing.names.length>1?'are':'is'} typing...</span>`;
+    ty.innerHTML = `<span class="dots">${[0,1,2].map(k => `<span class="${k===ph?'on':''}"></span>`).join('')}</span><span>${st.typing.names.map(n => `<b style="color:#eceef7">${esc(n)}</b>`).join(', ')} ${st.typing.names.length>1?'are':'is'} typing...</span>`;
   } else ty.innerHTML = '';
 
+  // camera: zoom toward an item (or a point) + shake
+  const stage = document.getElementById('stage');
+  let tx = 0, ty2 = 0, z = 1;
+  if (st.cam && st.cam.z > 1.001) {
+    z = st.cam.z;
+    let cx = 540, cy = 960;
+    const el = st.cam.idx != null ? document.querySelector(`[data-i="${st.cam.idx}"]`) : null;
+    stage.style.transform = '';
+    let left = 0, width = 1080;
+    if (el) {
+      const row = el.closest('.group') || el;
+      const rr = row.getBoundingClientRect(), er = el.getBoundingClientRect();
+      // measure the real text width, not the full block width
+      let right = rr.left + 300;
+      row.querySelectorAll('.head, .msg, .img, .sys span').forEach((n) => {
+        const rg = document.createRange(); rg.selectNodeContents(n); right = Math.max(right, rg.getBoundingClientRect().right);
+      });
+      left = rr.left + 16; width = right - left + 30;
+      cy = er.top + er.height / 2;
+      z = Math.max(1.1, Math.min(z, 1040 / width));
+    }
+    const k = st.cam.k ?? 1;  // 0..1 blend
+    z = 1 + (z - 1) * k;
+    tx = ((1080 - width * z) / 2 - left * z) * k;
+    ty2 = (960 - cy * z) * k;
+  }
   const sh = st.shake || 0;
-  document.getElementById('shake').style.transform = sh ? `translate(${(Math.sin(sh*13)*18).toFixed(1)}px, ${(Math.cos(sh*17)*14).toFixed(1)}px)` : '';
+  const sx = sh ? Math.sin(sh * 13.1) * 26 * Math.min(1, sh) : 0, sy = sh ? Math.cos(sh * 17.3) * 20 * Math.min(1, sh) : 0;
+  const rot = sh ? Math.sin(sh * 7.7) * 1.5 * Math.min(1, sh) : 0;
+  stage.style.transform = `translate(${(tx + sx).toFixed(1)}px, ${(ty2 + sy).toFixed(1)}px) scale(${z.toFixed(4)}) rotate(${rot.toFixed(2)}deg)`;
+
+  const fry = st.fry || 0;
+  stage.style.filter = fry ? `saturate(${1 + fry * 3}) contrast(${1 + fry * 0.8}) brightness(${1 + fry * 0.1})` : '';
+  document.getElementById('fry').style.opacity = (fry * 0.55).toFixed(2);
+  document.getElementById('vignette').style.boxShadow = `inset 0 0 260px rgba(255,0,60,${(fry*0.8).toFixed(2)})`;
   document.getElementById('flash').style.opacity = st.flash || 0;
+  document.getElementById('flash').style.background = st.flashColor || '#fff';
+
+  const cu = document.getElementById('closeup');
+  if (st.closeup) {
+    cu.style.display = 'flex';
+    const c = st.chars[st.closeup.who];
+    document.getElementById('cuav').innerHTML = AV[c.avatar](c.crown ? CROWN : '');
+    const p = st.closeup.p ?? 1;
+    document.getElementById('cuav').style.transform = `scale(${(0.6 + 0.4 * (1 - Math.pow(1 - p, 3)) + (st.closeup.pulse||0)).toFixed(3)}) rotate(${((st.closeup.tilt||0)).toFixed(1)}deg)`;
+    document.getElementById('culine').textContent = st.closeup.text || '';
+    cu.style.filter = st.closeup.fry ? 'saturate(3.5) contrast(1.7)' : '';
+  } else cu.style.display = 'none';
+
+  const im = document.getElementById('impact');
+  if (st.impact) {
+    im.style.display = 'block'; im.textContent = st.impact.text;
+    const p = st.impact.p ?? 1, e = 1 - Math.pow(1 - p, 3);
+    im.style.transform = `scale(${(2.4 - 1.4 * e).toFixed(3)}) rotate(${(-6 + (st.impact.wob||0)).toFixed(1)}deg)`;
+    im.style.opacity = Math.min(1, p * 3).toFixed(2);
+    im.style.color = st.impact.color || '#fff';
+  } else im.style.display = 'none';
+
+  const b = document.getElementById('burst');
+  if (st.burst) {
+    const { emoji, p, n = 14, seed = 1 } = st.burst;
+    let h = '';
+    for (let i = 0; i < n; i++) {
+      const x = rnd(seed + i) * 1000, y0 = 1950 + rnd(seed + i * 3) * 300, sp = 1600 + rnd(seed + i * 7) * 900;
+      const y = y0 - sp * p + 900 * p * p, r = (rnd(seed + i * 11) - .5) * 120 * p * 3;
+      h += `<span style="left:${x.toFixed(0)}px;top:${y.toFixed(0)}px;transform:rotate(${r.toFixed(0)}deg) scale(${(0.6 + rnd(seed+i*5)*0.8).toFixed(2)})">${emoji}</span>`;
+    }
+    b.innerHTML = h;
+  } else b.innerHTML = '';
+
+  const g = document.getElementById('glitch');
+  if (st.glitch) {
+    let h = '';
+    for (let i = 0; i < 9; i++) {
+      const s = st.glitch * 100 + i;
+      h += `<div style="top:${(rnd(s)*1900).toFixed(0)}px;height:${(10 + rnd(s*2)*90).toFixed(0)}px;background:${['#ff004c','#00e5ff','#7cff00'][i%3]};opacity:${(0.25 + rnd(s*3)*0.5).toFixed(2)};transform:translateX(${((rnd(s*4)-.5)*200).toFixed(0)}px)"></div>`;
+    }
+    g.innerHTML = h;
+    stage.style.filter += ` hue-rotate(${(rnd(st.glitch)*360).toFixed(0)}deg)`;
+  } else g.innerHTML = '';
 };
-function animCss(p){
-  // pop-in: scale + slide
-  const e = 1 - Math.pow(1 - p, 3);
-  const over = p < 1 ? Math.sin(p * Math.PI) * 0.04 : 0;
-  return `transform: translateY(${((1-e)*40).toFixed(1)}px) scale(${(0.86 + 0.14*e + over).toFixed(3)}); opacity:${Math.min(1, p*2).toFixed(2)};`;
-}
 </script>
 </body>
 </html>
