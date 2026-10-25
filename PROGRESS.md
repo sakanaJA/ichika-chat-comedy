@@ -57,3 +57,10 @@
   - full001 https://youtu.be/JIXi4UW7CsA (with chapters)
 - Upload automation saved as `render/upload.js`. Gotcha fixed: wait for the "Video published" dialog before closing the tab,
   otherwise the video stays a draft.
+
+## 2026-10-25 (ep005)
+- Wrote and rendered ep005 "He wrote me a love poem 📜" (53.5s): Gerald's stolen poem, Kevin "that's MY poem",
+  ServerBot plagiarism check (grandma birthday card, 1974), Ichika's "roses are red / violets are blue / @ServerBot ban these two",
+  Grandma claims the poem, Dave "roses are red i am a bird".
+- **Published ep005 as a public Short:** https://youtube.com/shorts/uU3fsW1kXsU (Comedy, not for kids, altered content No).
+- Note: long @mentions + `big` + zoom overflow the screen; keep zoomed punchlines short.
