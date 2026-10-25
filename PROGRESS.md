@@ -83,3 +83,6 @@
   - full002 https://youtu.be/dLY9at5hblk
 - ep010 + full002 first hit "Daily upload limit reached"; the owner did the one-time phone verification, then both uploaded.
 - Note: an unrelated draft "the quiet after full" (1:01) is in Studio Shorts drafts — not ours, left untouched.
+- Fix: ep010 + full002 were left as **drafts** — Studio showed "We're still checking your content" after Done and the
+  script didn't press "Publish anyway". Published both from their drafts (all 10 Shorts + full001/full002 now Public);
+  `render/upload.js` now clicks "Publish anyway" when that warning appears.

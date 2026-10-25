@@ -73,6 +73,13 @@ const sleep = (ms) => new Promise(r => setTimeout(r, ms));
     await ev(`$$d('#done-button').find(e => e.offsetParent !== null).click()`);
     await until(`$$d('ytcp-video-share-dialog, ytcp-uploads-still-processing-dialog, ytcp-prechecks-warning-dialog').some(e => e.offsetParent !== null && /published|processing|publish anyway/i.test(e.textContent))`, 90000);
     console.log('dialog:', await ev(`$$d('ytcp-video-share-dialog, ytcp-uploads-still-processing-dialog, ytcp-prechecks-warning-dialog').filter(e => e.offsetParent !== null).map(e => e.innerText.replace(/\\s+/g, ' ').slice(0, 80)).join(' || ')`));
+    // "We're still checking your content" warning: without "Publish anyway" the video stays a draft
+    const pre = `$$d('ytcp-prechecks-warning-dialog').find(e => e.offsetParent !== null)`;
+    if (await ev('!!' + pre)) {
+      await ev(`$$d('ytcp-button, button', ${pre}).find(b => /publish anyway/i.test(b.textContent)).click()`);
+      await until(`$$d('ytcp-video-share-dialog, ytcp-uploads-still-processing-dialog').some(e => e.offsetParent !== null && /published|processing/i.test(e.textContent))`, 90000);
+      console.log('dialog after publish anyway:', await ev(`$$d('ytcp-video-share-dialog, ytcp-uploads-still-processing-dialog').filter(e => e.offsetParent !== null).map(e => e.innerText.replace(/\\s+/g, ' ').slice(0, 80)).join(' || ')`));
+    }
     await sleep(4000);
     const link = await ev(`(() => { const t = $$d('ytcp-video-share-dialog, ytcp-uploads-still-processing-dialog, tp-yt-paper-dialog').map(e => e.textContent).join(' '); const m = t.match(/https:\\/\\/(youtube\\.com\\/shorts|youtu\\.be)\\/[\\w-]+/); return m ? m[0] : ''; })()`);
     console.log('LINK', link);
