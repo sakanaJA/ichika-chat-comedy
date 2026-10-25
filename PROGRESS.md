@@ -37,3 +37,14 @@
 - Channel description published. Profile picture + banner made (`branding/`), not uploaded yet.
 - Uploads blocked on one owner step: selecting files in the Mac file picker (Claude cannot control it).
 - Wrote `docs/DESIGN.md`: money plan, cast, Short/full video structure, effects, sound, pipeline, workflow, roadmap.
+
+## 2026-10-25 (ep004 + first upload)
+- Wrote and rendered ep004 "He said he's a famous streamer 🤡" (51.6s): Kevin's fake 10k followers, ServerBot fact check,
+  Ichika's live stream, Grandma's bingo-hall raid, Dave "is this the stream".
+- **Published ep004 as a public Short:** https://youtube.com/shorts/7O7RidExdHo (Comedy, not for kids, altered content No).
+- Upload method that skips the Mac file picker: Chrome with its own profile + `--remote-debugging-port=9222`
+  (owner logs in once), then automation sets the file and fills Studio through the DevTools protocol.
+- Local tools on this Mac (no Homebrew): Node in `~/.local/node-v22.11.0-darwin-arm64`, ffmpeg/ffprobe linked in `~/.local/bin`
+  (from npm `ffmpeg-static` / `@ffprobe-installer`), Playwright Chromium, numpy (pip --user).
+- Note: `\n` in message text is not rendered as a line break; keep each message on one line.
+- An old "ep001" draft (no metadata) is still in Studio drafts.

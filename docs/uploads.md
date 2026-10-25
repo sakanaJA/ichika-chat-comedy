@@ -33,6 +33,13 @@ Subscribe for more Ichika vs the group chat.
 Subscribe for more Ichika vs the group chat.
 #shorts #groupchat #funny #anime #gaming #chatstory
 
+## ep004 — Short
+**Title:** He said he's a famous streamer 🤡 #shorts
+**Description:**
+10k followers. Allegedly. ServerBot did the math.
+Subscribe for more Ichika vs the group chat.
+#shorts #groupchat #funny #anime #streamer #chatstory
+
 ## full001 — Full video
 **Title:** Ichika vs The Group Chat (Part 1)
 **Description:**
