@@ -64,3 +64,21 @@
   Grandma claims the poem, Dave "roses are red i am a bird".
 - **Published ep005 as a public Short:** https://youtube.com/shorts/uU3fsW1kXsU (Comedy, not for kids, altered content No).
 - Note: long @mentions + `big` + zoom overflow the screen; keep zoomed punchlines short.
+
+## 2026-10-25 (ep006–ep010 + Season 1 full video — "a bit crazier")
+- Wrote and rendered (same cast/rules, more chaos: impact text, glitches, deep-fry, name swaps, absurd escalations):
+  - ep006 "He said he can cook 🍳" (53.8s) — cereal with water, microwaved fork, smoke alarm joins VC, Grandma's lasagna.
+  - ep007 "He pretended to be me 💅" (51.2s) — Kevin renames to Ichika, Gerald falls for him, "i love you kevin" (edited), Mom's wig.
+  - ep008 "He made a crypto coin about me 📉" (51.5s) — $ICHIKA crashes to -$4,000, Grandma buys it all, Kevin becomes "grandma's intern".
+  - ep009 "He challenged me to a rap battle 🎤" (58.1s) — Ichika's verse makes Gerald's fedora leave the server, Grandma's BINGO bars destroy the server.
+  - ep010 "Kevin's mom joined the group chat 💀" (65.3s, season finale) — baby pics, Mom vs Grandma 1998 bingo grudge (Brenda vs Margaret).
+- full002 "Ichika vs The Group Chat — Season 1 (All 10 Episodes)" (8:58, chapters in `output/full002.chapters.txt`).
+- Template fix: deleted image messages now hide the image.
+- Published (Public, Comedy, not for kids, altered No):
+  - ep006 https://youtu.be/X2oZJNf0lmU
+  - ep007 https://youtube.com/shorts/-j7dVrVFLJ0
+  - ep008 https://youtube.com/shorts/cBEoh3_y1xU
+  - ep009 https://youtube.com/shorts/_NnwKdCqdMI
+- **Blocked:** ep010 + full002 hit YouTube's "Daily upload limit reached" (unverified channel). Needs the owner's
+  one-time phone verification (Studio → Verify) or a 24h wait, then:
+  `python3 upall.py ep010 full002` equivalent → `node render/upload.js upload <file> <title> <desc>` with metadata from `docs/uploads.md`.

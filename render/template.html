@@ -163,7 +163,7 @@ window.render = function(st){
     const cls = ['msg']; if (it.big) cls.push('big'); if (it.deleted) cls.push('deleted');
     let line = '';
     if (it.text || it.deleted) line += `<div class="${cls.join(' ')}" data-i="${i}" style="${an}">${it.deleted ? 'message deleted' : fmt(it.text)}${it.edited ? ' <span class="ed">(edited)</span>' : ''}</div>`;
-    if (it.img) line += `<div class="img" data-i="${i}" style="${it.text ? '' : an}"><div class="pic" style="background:${it.img.bg||'#f4f1ea'}">${it.img.emoji}<div class="cap">${esc(it.img.cap||'')}</div></div></div>`;
+    if (it.img && !it.deleted) line += `<div class="img" data-i="${i}" style="${it.text ? '' : an}"><div class="pic" style="background:${it.img.bg||'#f4f1ea'}">${it.img.emoji}<div class="cap">${esc(it.img.cap||'')}</div></div></div>`;
     const reacts = (it.reacts||[]).map(r => `<span class="react">${r.emoji}<span>${r.n}</span></span>`).join('');
     if (reacts) line += `<div class="reacts">${reacts}</div>`;
     const mention = /@/.test(it.text||'') && it.mentionsMain;
