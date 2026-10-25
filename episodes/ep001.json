@@ -1,0 +1,27 @@
+{
+  "title": "He was a mod for 30 seconds 💀",
+  "hook": "when your friend becomes a mod for ONE day",
+  "time": "Today at 3:14 AM",
+  "music": "chill",
+  "events": [
+    { "t": "pause", "s": 0.4 },
+    { "t": "set", "who": "waffles", "props": { "crown": true, "tag": "MOD" } },
+    { "t": "sys", "text": "Waffles was promoted to Moderator", "icon": "👑", "tone": "gold" },
+    { "t": "msg", "who": "waffles", "text": "finally." },
+    { "t": "msg", "who": "waffles", "text": "a new era begins" },
+    { "t": "msg", "who": "mochi", "text": "oh no" },
+    { "t": "msg", "who": "waffles", "text": "rule 1: no saying \"oh no\"" },
+    { "t": "sys", "text": "Mochi was muted for 5 minutes", "icon": "🔇", "tone": "red" },
+    { "t": "msg", "who": "toast", "text": "wait is he allowed to do that??" },
+    { "t": "msg", "who": "waffles", "text": "rule 2: no questions" },
+    { "t": "sys", "text": "Toast was muted for 5 minutes", "icon": "🔇", "tone": "red" },
+    { "t": "msg", "who": "pickle", "text": "lol" },
+    { "t": "msg", "who": "waffles", "text": "rule 3: no lol" },
+    { "t": "msg", "who": "pickle", "text": "you just said lol in rule 3" },
+    { "t": "typing", "who": "waffles", "s": 2.4, "after": 0.4 },
+    { "t": "sys", "text": "Waffles was banned by Waffles", "icon": "🔨", "tone": "red", "shake": true, "hold": 1.4 },
+    { "t": "msg", "who": "pickle", "text": "a new era ends", "hold": 0.6 },
+    { "t": "react", "emoji": "💀", "n": 4, "hold": 0.4 },
+    { "t": "react", "emoji": "😭", "n": 2 }
+  ]
+}

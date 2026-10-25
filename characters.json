@@ -1,0 +1,29 @@
+{
+  "app": { "name": "Yapp", "server": "the snack drawer", "channel": "general" },
+  "characters": {
+    "mochi": {
+      "name": "Mochi",
+      "color": "#ff9ec4",
+      "avatar": "mochi",
+      "bio": "A round rice-cake blob. Pure chaos. Types in ALL CAPS when excited. Starts every problem."
+    },
+    "pickle": {
+      "name": "Pickle",
+      "color": "#7ddc6b",
+      "avatar": "pickle",
+      "bio": "A frog. Deadpan. Short replies. Somehow always right. The punchline delivery guy."
+    },
+    "toast": {
+      "name": "Toast",
+      "color": "#f2c37a",
+      "avatar": "toast",
+      "bio": "A slice of bread. Anxious overthinker. Writes paragraphs. Reads too much into everything."
+    },
+    "waffles": {
+      "name": "Waffles",
+      "color": "#ffcf3f",
+      "avatar": "waffles",
+      "bio": "A waffle who wants power. Server admin energy. Loves rules, breaks them first."
+    }
+  }
+}

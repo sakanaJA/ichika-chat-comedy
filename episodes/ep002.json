@@ -1,0 +1,26 @@
+{
+  "title": "Never label your leftovers like this 🍕",
+  "hook": "when someone eats the food with YOUR name on it",
+  "time": "Today at 9:41 PM",
+  "music": "chill",
+  "events": [
+    { "t": "msg", "who": "toast", "text": "ok who ate the leftover pizza" },
+    { "t": "msg", "who": "toast", "text": "it had my NAME on it" },
+    { "t": "msg", "who": "mochi", "text": "what name" },
+    { "t": "msg", "who": "toast", "text": "MY name. \"toast\"" },
+    { "t": "msg", "who": "mochi", "text": "oh i thought it was instructions" },
+    { "t": "msg", "who": "mochi", "text": "so i toasted it 🍕" },
+    { "t": "msg", "who": "toast", "text": "MOCHI" },
+    { "t": "msg", "who": "pickle", "text": "she followed the label" },
+    { "t": "react", "emoji": "✅", "n": 2 },
+    { "t": "typing", "who": "toast", "s": 1.6 },
+    { "t": "msg", "who": "toast", "text": "fine. from now on my food says DO NOT EAT" },
+    { "t": "msg", "who": "mochi", "text": "noted 👍" },
+    { "t": "sys", "text": "the next day", "icon": "☀️" },
+    { "t": "msg", "who": "toast", "text": "WHO ATE THE \"DO NOT EAT\"", "time": "Tomorrow at 12:02 PM" },
+    { "t": "msg", "who": "pickle", "text": "waffles", "time": "Tomorrow at 12:02 PM" },
+    { "t": "typing", "who": "waffles", "s": 1.2 },
+    { "t": "msg", "who": "waffles", "text": "i thought it was a dare", "big": true, "shake": true, "time": "Tomorrow at 12:03 PM", "hold": 1.2 },
+    { "t": "react", "emoji": "💀", "n": 3 }
+  ]
+}

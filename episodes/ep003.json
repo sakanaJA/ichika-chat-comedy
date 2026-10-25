@@ -1,0 +1,24 @@
+{
+  "title": "Never reply \"k\" to an overthinker 😭",
+  "hook": "texting \"k\" to your friend who overthinks EVERYTHING",
+  "time": "Today at 6:58 PM",
+  "music": "tense",
+  "events": [
+    { "t": "msg", "who": "toast", "text": "hey are we still going to the movies tonight?" },
+    { "t": "msg", "who": "pickle", "text": "k", "hold": 1.0 },
+    { "t": "typing", "who": "toast", "s": 2.2 },
+    { "t": "msg", "who": "toast", "text": "just \"k\"?" },
+    { "t": "msg", "who": "toast", "text": "no emoji. no \"sounds good\". nothing??" },
+    { "t": "msg", "who": "mochi", "text": "uh oh. he used the K." },
+    { "t": "msg", "who": "toast", "text": "is he mad at me. did i do something. was it the pizza" },
+    { "t": "msg", "who": "waffles", "text": "a single \"k\" is a declaration of war in 14 countries" },
+    { "t": "msg", "who": "toast", "text": "WAFFLES THAT IS NOT REAL" },
+    { "t": "msg", "who": "waffles", "text": "source: trust me" },
+    { "t": "typing", "who": "toast", "s": 1.8 },
+    { "t": "msg", "who": "toast", "text": "pickle i'm so sorry. i'll buy the popcorn. i'll buy TWO popcorns" },
+    { "t": "typing", "who": "pickle", "s": 1.4 },
+    { "t": "msg", "who": "pickle", "text": "see? \"k\" works", "big": true, "shake": true, "hold": 1.2 },
+    { "t": "react", "emoji": "🍿", "n": 2 },
+    { "t": "react", "emoji": "💀", "n": 3 }
+  ]
+}
