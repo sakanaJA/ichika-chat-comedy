@@ -31,3 +31,9 @@
 - New cast: Kevin (simp), Sir Gerald (fedora), ServerBot, Grandma, Dave, Kevin's Mom.
 - Chat UI restyled to look like Discord (server rail, header, input bar, replies, mention highlight) — no Discord logo/name.
 - New ep001–ep003 (42–46s) + full001. Status: **waiting for owner review (v3)**.
+
+## 2026-10-25 (YouTube setup)
+- New YouTube channel **Ichika** (@Ichika-with-weird) created by the owner; Pip's channel left untouched.
+- Channel description published. Profile picture + banner made (`branding/`), not uploaded yet.
+- Uploads blocked on one owner step: selecting files in the Mac file picker (Claude cannot control it).
+- Wrote `docs/DESIGN.md`: money plan, cast, Short/full video structure, effects, sound, pipeline, workflow, roadmap.

@@ -37,6 +37,10 @@ several Shorts       --render/compile.js->  output/fullXXX.mp4 (1920x1080 full v
 - `render/template.html` — the chat UI (drawn in HTML/CSS, avatars are inline SVG)
 - `render/audio.py` — original synth music + sound effects (no outside audio = no copyright claims)
 - `characters.json` — cast settings
+- `render/avatars.js` — character avatars · `render/banner.html` — channel banner
+- `branding/` — channel picture, banner, settings
+
+**Full design (video structure, effects, pipeline, workflow): [docs/DESIGN.md](docs/DESIGN.md)**
 - `docs/uploads.md` — titles, descriptions and tags ready for YouTube
 - `PROGRESS.md` — work log
 

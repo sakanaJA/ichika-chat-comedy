@@ -1,13 +1,13 @@
 # Channel settings
 
-**Name:** Nugget's Hideout
-**Handle:** @NuggetsHideout (fallbacks: @NuggetsHideoutTV, @NuggetHideout)
-**Description:**
-Welcome to the group chat. 🍗
-Nugget thinks he's cool. Grandma TYPES IN CAPS. Kevin lies. The bot says "no." Dave is always 3 days late.
-New chat-story Shorts every day + full episodes every week.
-Subscribe so Grandma doesn't ban you.
+**Channel:** Ichika — @Ichika-with-weird (channel ID UCb0OjDwCQ5PHvX9i0UQBuPA)
+A new channel on the owner's Google account. The owner's other channel, "Pip's Little Adventures", is untouched.
 
-**Keywords:** group chat, chat story, text story, funny texts, comedy shorts, discord memes, nugget, grandma
-**Country:** United States (target audience) — only change if owner agrees
-**Profile picture:** branding/profile.png  **Banner:** branding/banner.png  **Watermark:** branding/watermark.png
+**Description (published 2026-10-25):**
+Ichika is the only girl in a group chat full of weird guys. They try. She wins. Every time. 🌸
+Chaotic chat-story comedy. New episodes every week.
+Cast: Ichika, xX_Kevin_Xx, Sir Gerald, ServerBot 3000, Grandma, and Dave (always 3 days late).
+
+**Profile picture:** `branding/ichika_profile.png` (800×800, from the owner's Runway clip) — not uploaded yet
+**Banner:** `branding/ichika_banner.png` (2560×1440, made with `render/banner.html`) — not uploaded yet
+**Keywords:** group chat, chat story, text story, funny texts, comedy shorts, anime, gamer girl

@@ -2,3 +2,4 @@ output/.work/
 node_modules/
 __pycache__/
 render/.card.html
+upload/

@@ -1,34 +1,46 @@
-# Upload metadata
+# Upload metadata (v3 — Ichika)
 
-All Shorts: `#shorts` in description. Category: Comedy. Audience: **not made for kids**.
-Altered/synthetic content label: **No** (cartoon chat, no realistic people/events).
+All videos: Category Comedy · Audience **No, it's not made for kids** · Altered/synthetic content: **No**
+(anime cartoon, nothing realistic) · Visibility: **Public**.
+
+## Channel
+- **Name:** Ichika
+- **Profile picture:** `upload/ichika_profile.png` (800x800, from owner's Runway clip)
+- **Banner:** `upload/ichika_banner.png` (2560x1440)
+- **Description:**
+  Ichika is the only girl in a group chat full of weird guys. They try. She wins. Every time. 🌸
+  Chaotic chat-story comedy. New episodes every week.
+  Cast: Ichika, xX_Kevin_Xx, Sir Gerald, ServerBot 3000, Grandma, and Dave (always 3 days late).
 
 ## ep001 — Short
-**Title:** I added my grandma to the group chat 💀 #shorts
-**Description:** Grandma is now the most powerful person on the server.
-Subscribe so Grandma doesn't ban you. #shorts #groupchat #funny #grandma #comedy
-**Tags:** group chat, chat story, funny texts, grandma, comedy shorts, text story
+**Title:** Being the only girl in the gamer chat 💀 #shorts
+**Description:**
+47 DMs in 9 seconds. Grandma had to step in.
+Subscribe or Grandma will find you 👵
+#shorts #groupchat #funny #anime #comedy #chatstory
 
 ## ep002 — Short
-**Title:** He said he's "basically famous" 💀 #shorts
-**Description:** Never lie in front of the bot. Never lie in front of your mom.
-#shorts #groupchat #funny #comedy #liar
-**Tags:** group chat, chat story, funny texts, kevin, liar, comedy shorts
+**Title:** He asked me to send pics 😏 #shorts
+**Description:**
+So I sent one. 🥔
+Subscribe for more Ichika vs the group chat.
+#shorts #groupchat #funny #anime #comedy #chatstory
 
 ## ep003 — Short
-**Title:** Our chat bot became self-aware 🤖 #shorts
-**Description:** !help ... no.
-#shorts #groupchat #funny #comedy #ai
-**Tags:** group chat, chat story, funny texts, chat bot, self aware, comedy shorts
-
-## full001 — Full video (demo, 3 episodes)
-**Title:** The Group Chat Has No Chill (Part 1)
+**Title:** When the boys say girls can't game 🎮 #shorts
 **Description:**
-Grandma, Kevin, the bot and Dave. All the chaos in one place.
+15 - 0. The excuses were better than the gameplay.
+Subscribe for more Ichika vs the group chat.
+#shorts #groupchat #funny #anime #gaming #chatstory
 
-0:00 Episode 1: I added my grandma to the group chat 💀
-0:48 Episode 2: He said he's 'basically famous' 💀
-1:35 Episode 3: Our chat bot became self-aware 🤖
+## full001 — Full video
+**Title:** Ichika vs The Group Chat (Part 1)
+**Description:**
+Ichika is the only girl in a group chat full of weird guys. They try. She wins.
 
-Subscribe so Grandma doesn't ban you.
-**Note:** Demo. Real full videos should have 15–20 episodes (10–15 min).
+0:00 Episode 1: Being the only girl in the gamer chat 💀
+0:47 Episode 2: He asked me to send pics 😏
+1:30 Episode 3: When the boys say girls can't game 🎮
+
+Subscribe for a new episode every week 🌸
+#groupchat #funny #anime #comedy #chatstory
