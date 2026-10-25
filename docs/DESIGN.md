@@ -170,8 +170,8 @@ Only frames that change are captured; still moments are reused. One Short render
 2. **Render**: `node render/render.js episodes/epXXX.json`.
 3. **Check**: Claude checks frames (zoom fits, no cut text, audio level) before sending.
 4. **Review**: the owner watches the video and only says OK or what to change.
-5. **Upload**: YouTube Studio in the app browser; metadata from `docs/uploads.md`.
-   *Limit:* Claude cannot operate the Mac file picker, so the owner selects the files (one step).
+5. **Upload**: `node render/upload.js upload <file> <title> <desc>` drives YouTube Studio in a Chrome window started with
+   `--remote-debugging-port=9222` (owner logs in once); metadata from `docs/uploads.md`. No file picker step.
 6. **Log**: commit + `PROGRESS.md` entry.
 
 Posting plan: 1 Short per day. A full video every 15–20 episodes.
@@ -183,7 +183,7 @@ Category: Comedy · Not made for kids · Altered content: No · Visibility: Publ
 
 ## 6. Roadmap
 
-- [ ] Upload ep001–ep003 + full001 (waiting on the owner's file selection)
+- [x] Upload ep001–ep004 + full001 (2026-10-25)
 - [ ] Channel picture + banner (`branding/`)
 - [ ] Episodes 4–20 → first real 10–15 min full video
 - [ ] More Ichika clips from Runway (angry, laughing, shocked) for more reaction types

@@ -48,3 +48,12 @@
   (from npm `ffmpeg-static` / `@ffprobe-installer`), Playwright Chromium, numpy (pip --user).
 - Note: `\n` in message text is not rendered as a line break; keep each message on one line.
 - An old "ep001" draft (no metadata) is still in Studio drafts.
+
+## 2026-10-25 (all videos published)
+- Published (Public, Comedy, not for kids, altered No):
+  - ep001 https://youtube.com/shorts/wI-dLYopUC4 (finished the old draft)
+  - ep002 https://youtube.com/shorts/XY4ohxVT7cI
+  - ep003 https://youtube.com/shorts/M5V1trLAnmc
+  - full001 https://youtu.be/JIXi4UW7CsA (with chapters)
+- Upload automation saved as `render/upload.js`. Gotcha fixed: wait for the "Video published" dialog before closing the tab,
+  otherwise the video stays a draft.
