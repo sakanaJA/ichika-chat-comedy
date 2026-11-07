@@ -1,0 +1,60 @@
+{
+  "app": {
+    "name": "Yapp",
+    "server": "gamer cave",
+    "channel": "general",
+    "topic": "no creeps allowed (this means you kevin)"
+  },
+  "characters": {
+    "ichika": {
+      "name": "Ichika",
+      "color": "#ff8fc7",
+      "voice": "af_bella",
+      "speed": 1.05,
+      "tag": ""
+    },
+    "kevin": {
+      "name": "xX_Kevin_Xx",
+      "color": "#57f287",
+      "voice": "am_adam",
+      "speed": 1.12,
+      "tag": ""
+    },
+    "gerald": {
+      "name": "Sir Gerald",
+      "color": "#c9a26b",
+      "voice": "bm_george",
+      "speed": 1.0,
+      "tag": ""
+    },
+    "bot": {
+      "name": "ServerBot 3000",
+      "color": "#5ab8ff",
+      "voice": "am_michael",
+      "speed": 1.04,
+      "tag": "APP",
+      "fx": "robot"
+    },
+    "grandma": {
+      "name": "Grandma",
+      "color": "#c27cff",
+      "voice": "bf_isabella",
+      "speed": 1.0,
+      "tag": ""
+    },
+    "dave": {
+      "name": "Dave",
+      "color": "#b5bac1",
+      "voice": "bm_lewis",
+      "speed": 0.92,
+      "tag": ""
+    },
+    "mom": {
+      "name": "Kevin's Mom",
+      "color": "#ed4245",
+      "voice": "af_nicole",
+      "speed": 1.0,
+      "tag": ""
+    }
+  }
+}

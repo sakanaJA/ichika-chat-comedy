@@ -86,3 +86,8 @@
 - Fix: ep010 + full002 were left as **drafts** — Studio showed "We're still checking your content" after Done and the
   script didn't press "Publish anyway". Published both from their drafts (all 10 Shorts + full001/full002 now Public);
   `render/upload.js` now clicks "Publish anyway" when that warning appears.
+## 2026-11-07 (v4 — same production method as Tiny Money Facts)
+- Rebuilt the engine in `v2/`: Remotion + Three.js 3D neon gamer room, 3D cast (Kevin, Gerald, Grandma, Bot, Dave, Mom),
+  Ichika's Runway clip on a 3D cat-ear monitor, Discord-style chat overlay, focus-card zoom, shake, 💀 bursts, ban hammer, rocket exit.
+- Kokoro voices per character (page UI in the built-in browser), robot FX for the bot; synth SFX + 145 BPM music; TMF mix.
+- ep001 "Being the only girl in the gamer chat 💀" (40.8 s) rendered, checked, **published**: https://youtube.com/shorts/r3uNKa4Ojrs

@@ -1,0 +1,92 @@
+{
+ "1": {
+  "who": "ichika",
+  "file": "clip_01.wav",
+  "dur": 0.744
+ },
+ "2": {
+  "who": "kevin",
+  "file": "clip_02.wav",
+  "dur": 0.513
+ },
+ "3": {
+  "who": "gerald",
+  "file": "clip_03.wav",
+  "dur": 0.62
+ },
+ "4": {
+  "who": "kevin",
+  "file": "clip_04.wav",
+  "dur": 0.579
+ },
+ "5": {
+  "who": "kevin",
+  "file": "clip_05.wav",
+  "dur": 0.947
+ },
+ "6": {
+  "who": "gerald",
+  "file": "clip_06.wav",
+  "dur": 1.953
+ },
+ "7": {
+  "who": "ichika",
+  "file": "clip_07.wav",
+  "dur": 0.863
+ },
+ "8": {
+  "who": "bot",
+  "file": "clip_08.wav",
+  "dur": 4.558
+ },
+ "10": {
+  "who": "ichika",
+  "file": "clip_10.wav",
+  "dur": 0.697
+ },
+ "11": {
+  "who": "kevin",
+  "file": "clip_11.wav",
+  "dur": 1.705
+ },
+ "14": {
+  "who": "ichika",
+  "file": "clip_14.wav",
+  "dur": 1.09
+ },
+ "15": {
+  "who": "gerald",
+  "file": "clip_15.wav",
+  "dur": 2.548
+ },
+ "16": {
+  "who": "gerald",
+  "file": "clip_16.wav",
+  "dur": 2.632
+ },
+ "17": {
+  "who": "bot",
+  "file": "clip_17.wav",
+  "dur": 0.913
+ },
+ "19": {
+  "who": "ichika",
+  "file": "clip_19.wav",
+  "dur": 0.98
+ },
+ "22": {
+  "who": "grandma",
+  "file": "clip_22.wav",
+  "dur": 2.297
+ },
+ "25": {
+  "who": "ichika",
+  "file": "clip_25.wav",
+  "dur": 1.401
+ },
+ "27": {
+  "who": "dave",
+  "file": "clip_27.wav",
+  "dur": 0.893
+ }
+}

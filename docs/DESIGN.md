@@ -1,5 +1,10 @@
 # Ichika — Project & Video Design
 
+> **2026-11-07: production method changed.** Videos are now made exactly like Tiny Money Facts v2:
+> **Three.js (real 3D) + Remotion**, Kokoro AI voices (one per character), code-made SFX/music, Chrome upload.
+> The concept, cast, beat sheet and rules below are unchanged. New engine: [`v2/`](../v2/) · pipeline: [`v2/docs/PIPELINE.md`](../v2/docs/PIPELINE.md) · playbook: [`v2/docs/PLAYBOOK.md`](../v2/docs/PLAYBOOK.md).
+> Section 4 (old canvas pipeline) is kept for history only. AI disclosure label is now **Yes** (AI voices).
+
 An English-language YouTube comedy channel. Each episode is a short story told as a group chat in a fake
 Discord-style app. The owner only reviews finished videos. Claude writes the stories, renders the videos and
 prepares the uploads.
