@@ -56,11 +56,22 @@ Concept source of truth: `docs/DESIGN.md` in github.com/sakanaJA/ichika-chat-com
 
 | # | Date | Title | Story | Link |
 |---|------|-------|-------|------|
-| 1 | 2026-11-07 | Being the only girl in the gamer chat 💀 | Ichika joins; Kevin/Gerald spam; bot counts 47 DMs; Kevin renames to "ichika's bf (real)"; Gerald timed out (ban hammer); Grandma scares Kevin away; Dave ending | https://youtube.com/shorts/r3uNKa4Ojrs |
+| 1 | 2026-10-25 | Being the only girl in the gamer chat 💀 (old 2D method) | Ichika joins, 47 DMs, Grandma | https://youtube.com/shorts/wI-dLYopUC4 |
+| 2 | 2026-10-25 | He asked me to send pics 😏 (old) | potato pic, Kevin's mom | https://youtube.com/shorts/XY4ohxVT7cI |
+| 3 | 2026-10-25 | When the boys say girls can't game 🎮 (old) | 1v1 15-0, Grandma wins too | https://youtube.com/shorts/M5V1trLAnmc |
+| 4 | — | He said he's a famous streamer 🤡 (old) | fake 10k followers | https://youtube.com/shorts/7O7RidExdHo |
+| 5 | — | He wrote me a love poem 📜 (old) | Gerald's poem, bot grades it | https://youtube.com/shorts/uU3fsW1kXsU |
+| 6 | — | He said he can cook 🍳 (old) | cereal with water, Grandma's lasagna | https://youtu.be/X2oZJNf0lmU |
+| 7 | — | He pretended to be me 💅 (old) | Kevin renames to Ichika, Gerald falls for it | https://youtube.com/shorts/-j7dVrVFLJ0 |
+| 8 | — | He made a crypto coin about me 📉 (old) | $ICHIKA crash, Grandma buys it | https://youtube.com/shorts/cBEoh3_y1xU |
+| 9 | — | He challenged me to a rap battle 🎤 (old) | rap battle, BINGO bars | https://youtube.com/shorts/_NnwKdCqdMI |
+| 10 | — | Kevin's mom joined the group chat 💀 (old) | baby pics, 1998 bingo grudge | https://youtube.com/shorts/gqsEPcz0FeA |
+| F1 | — | Ichika vs The Group Chat (Part 1) (old) | ep1–3 | https://youtu.be/JIXi4UW7CsA |
+| F2 | — | Season 1 (All 10 Episodes) (old) | ep1–10 | https://youtu.be/dLY9at5hblk |
+| 11 | 2026-11-07 | Being the only girl in the gamer chat 💀 (**first 3D/v2 video; remake of story 1**) | Ichika joins; Kevin/Gerald spam; bot counts 47 DMs; Kevin renames to "ichika's bf (real)"; Gerald timed out (ban hammer); Grandma scares Kevin away; Dave ending | https://youtube.com/shorts/r3uNKa4Ojrs |
 
 ### Story ideas (not used yet)
-- "send pics 😏" → she sends a potato; Kevin's mom joins
-- "girls can't game" → 1v1, 15-0; Grandma also wins 15-0
 - The bot becomes self-aware and bans everyone except Ichika
-- Gerald writes Ichika a poem (it's terrible, the bot grades it)
 - Kevin buys a "verified" badge; it's a sticker
+- Gerald starts a "nice guys" support group server; Dave is the only member
+- Ichika goes AFK for 5 minutes; the guys elect a new "server princess" (it's Grandma)
