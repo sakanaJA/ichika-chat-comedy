@@ -135,7 +135,12 @@ if clips:
 # ---------- sfx + music ----------
 sfx = np.zeros(N + 4 * SR)
 for tc, k in cues:
-    s = synth.DUR_SFX[k[0]](k[1]) if isinstance(k, tuple) else synth.SFX[k]()
+    if isinstance(k, tuple):
+        s = synth.DUR_SFX[k[0]](k[1])
+    elif k in synth.SFX:
+        s = synth.SFX[k]()
+    else:  # duration SFX used by name (e.g. "glitch") -> default length
+        s = synth.DUR_SFX[k]()
     i0 = max(0, int(tc * SR))
     sfx[i0:i0 + len(s)] += s
 sfx = sfx[:N]

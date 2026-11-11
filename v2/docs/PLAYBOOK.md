@@ -69,9 +69,11 @@ Concept source of truth: `docs/DESIGN.md` in github.com/sakanaJA/ichika-chat-com
 | F1 | — | Ichika vs The Group Chat (Part 1) (old) | ep1–3 | https://youtu.be/JIXi4UW7CsA |
 | F2 | — | Season 1 (All 10 Episodes) (old) | ep1–10 | https://youtu.be/dLY9at5hblk |
 | 11 | 2026-11-07 | Being the only girl in the gamer chat 💀 (**first 3D/v2 video; remake of story 1**) | Ichika joins; Kevin/Gerald spam; bot counts 47 DMs; Kevin renames to "ichika's bf (real)"; Gerald timed out (ban hammer); Grandma scares Kevin away; Dave ending | https://youtube.com/shorts/r3uNKa4Ojrs |
+| 12 | 2026-11-11 | He said he's verified now 🤡 | Kevin's ✅ costs $9.99 from "the gas station guy"; bot scans it: a sticker on his monitor; Gerald's says "GOOD JOB ⭐"; they are Grandma's bingo stickers; Kevin un-verified (ban hammer); "verified clown"; Dave ate the sticker | https://youtube.com/shorts/OaNvwBljKBQ |
 
 ### Story ideas (not used yet)
 - The bot becomes self-aware and bans everyone except Ichika
-- Kevin buys a "verified" badge; it's a sticker
 - Gerald starts a "nice guys" support group server; Dave is the only member
 - Ichika goes AFK for 5 minutes; the guys elect a new "server princess" (it's Grandma)
+- Kevin hires ServerBot as his "wingman"; the bot only reads his search history out loud
+- Gerald tries to start a podcast in voice chat; the only listener is Dave

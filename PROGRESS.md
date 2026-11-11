@@ -91,3 +91,9 @@
   Ichika's Runway clip on a 3D cat-ear monitor, Discord-style chat overlay, focus-card zoom, shake, 💀 bursts, ban hammer, rocket exit.
 - Kokoro voices per character (page UI in the built-in browser), robot FX for the bot; synth SFX + 145 BPM music; TMF mix.
 - ep001 "Being the only girl in the gamer chat 💀" (40.8 s) rendered, checked, **published**: https://youtube.com/shorts/r3uNKa4Ojrs
+
+## 2026-11-11 (v2 ep002)
+- ep002 "He said he's verified now 🤡" (39.2 s): Kevin's fake ✅ (gas-station sticker), bot scan, Gerald's "GOOD JOB ⭐", Grandma's bingo stickers, ban hammer, Dave ate the sticker.
+- Voices: Kokoro web page in Chrome was too slow and the WAV couldn't reach the workspace (no Mac MCP), so added `tools/voices_local.py`
+  (same Kokoro-82M v1.0 model + voices via kokoro-onnx, model files from GitHub release). Fixed build.py crash for `sfx: "glitch"`.
+- **Published:** https://youtube.com/shorts/OaNvwBljKBQ (Public, not for kids, altered content Yes).

@@ -16,6 +16,8 @@ Code: github.com/sakanaJA/ichika-chat-comedy, folder `v2/` (this project).
 Open the Kokoro page, then one `javascript_tool` call: for each line set the textarea + voice `<select>`, click **Generate**,
 wait for the new `<audio>` blob, decode it (AudioContext 24 kHz), pack all clips into ONE WAV with 0.5 s gaps, download
 `ichika_voices_epNNN.wav`, and return `{index: {who, start, dur}}` → save as `voices/epNNN/pack.json`.
+**Fallback (no Mac MCP / slow page):** `python3 tools/voices_local.py epNNN ~/kokoro` = same Kokoro-82M v1.0 model + voice names,
+run locally via `kokoro-onnx` (model files from the kokoro-onnx GitHub release; setup in the script header). Writes the same pack.wav/pack.json.
 Get the WAV: the owner's Claude Code MCP copies it `~/Downloads → ~/Movies/Ichika/`, then `device_stage_files` → `voices/epNNN/pack.wav`.
 
 ## 3. Build
